@@ -9,38 +9,38 @@ namespace ToolLibrary.Dungeons.Mobs.Classes
     {
         #region BaseClass variables
         // Description / Misc
-        ClassDescription m_classDescription { get; }
+        public ClassDescription ClassDescription { get; }
         
         // Primary ability
-        int m_primaryAbility { get; set; }
+        public int PrimaryAbility { get; set; }
 
         // Saving throws (can be multiple, and can be changed at a later stage)
-        Proficiencies.SavingThrows.SavingThrows m_savingThrows { get; }
+        public Proficiencies.SavingThrows.SavingThrows SavingThrows { get; }
 
         // Hit points
-        Dice.Dice m_dice { get; set; }
+        Dice.Dice Dice { get; set; }
 
         // Proficiencies
-        List<ProficiencyBools> m_armorProficiencies { get; set; }
-        List<ProficiencyBools> m_weaponProficiencies { get; set; }
-        List<ProficiencyBools> m_toolProficiencies { get; set; }
+        public List<ProficiencyBools> ArmorProficiencies { get; set; }
+        public List<ProficiencyBools> WeaponProficiencies { get; set; }
+        public List<ProficiencyBools> ToolProficiencies { get; set; }
 
         // Skills
-        List<Skill> m_skills { get; set; }
+        public List<Skill> Skills { get; set; }
         #endregion
 
         public BaseClass(ClassDescription classDescription, int primaryAbility, Proficiencies.SavingThrows.SavingThrows savingThrows, Dice.Dice dice, List<ProficiencyBools> armorProficiencies, List<ProficiencyBools> weaponProficiencies, List<ProficiencyBools> toolProficiencies, List<Skill> skills)
         {
             #region set input data to local values
 
-            m_classDescription = classDescription;
-            m_primaryAbility = primaryAbility;
-            m_savingThrows = savingThrows;
-            m_dice = dice;
-            m_armorProficiencies = armorProficiencies;
-            m_weaponProficiencies = weaponProficiencies;
-            m_toolProficiencies = toolProficiencies;
-            m_skills = skills;
+            ClassDescription = classDescription;
+            PrimaryAbility = primaryAbility;
+            SavingThrows = savingThrows;
+            Dice = dice;
+            ArmorProficiencies = armorProficiencies;
+            WeaponProficiencies = weaponProficiencies;
+            ToolProficiencies = toolProficiencies;
+            Skills = skills;
 
             #endregion
         }

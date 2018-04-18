@@ -1,14 +1,14 @@
-﻿namespace ToolLibrary.Dungeons.Dice
+﻿namespace ToolLibrary.Dungeons.Mobs.Classes
 {
     internal class ClassDescription
     {
-        string m_className { get; set; }
-        string m_classDescription { get; set; }
+        public string Name { get; }
+        public string Description { get; }
 
-        public ClassDescription(string className, string classDescription)
+        public ClassDescription(string name, string description)
         {
-            m_classDescription = classDescription;
-            m_className = className;
+            Description = description;
+            Name = name;
         }
     }
 }
