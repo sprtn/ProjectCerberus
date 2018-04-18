@@ -15,15 +15,13 @@ namespace TestRunner.Tests
         /// <returns>Success or failure</returns>
         public bool FirstDiceTest()
         {
-            
             SetTest("First dice test");
 
-            List<Dice> listOfTestDice = new List<Dice>()
+            var listOfTestDice = new List<Dice>()
             {
                 new Dice("2d2"),
                 new Dice("3d2"),
                 new Dice("6d6"),
-                new Dice("adh")
             };
 
             foreach (var dice in listOfTestDice)
@@ -31,10 +29,10 @@ namespace TestRunner.Tests
                 try
                 {
                     Console.WriteLine($"testing dice {dice.ToString()}");
-                    int totalForAllTests = 0;
-                    int numberOfTests = 10;
+                    var totalForAllTests = 0;
+                    var numberOfTests = 10;
 
-                    for (int i = 0; i < numberOfTests; i++)
+                    for (var i = 0; i < numberOfTests; i++)
                         totalForAllTests += dice.ThrowDice();
 
                     if (totalForAllTests > numberOfTests * (dice.GetNumberOfDice * dice.GetSizeOfDice) ||
@@ -45,7 +43,7 @@ namespace TestRunner.Tests
                 {
                     if (dice.ToString() != "adh")
                     {
-                        Console.WriteLine($"Error occured at dice test of {dice.ToString()} ", e.Message);
+                        Console.WriteLine($"Error occured at dice test of {dice} ", e.Message);
                         return false;
                     }
                     Console.WriteLine("First Dice Test succeeded");
