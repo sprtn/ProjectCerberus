@@ -4,8 +4,6 @@ namespace ToolLibrary.Dungeons.Dice
 {
     public class Dice
     {
-        private readonly string _mDiceName;
-
         public int GetSizeOfDice { get; }
 
         public int GetNumberOfDice { get; }
@@ -13,8 +11,6 @@ namespace ToolLibrary.Dungeons.Dice
 
         public Dice(string diceName)
         {
-            _mDiceName = diceName;
-
             #region If the dice is a 'xdy', we store x as numberOfDice and y as sizeOfDice
 
             if (diceName.Length != 3)
@@ -82,7 +78,7 @@ namespace ToolLibrary.Dungeons.Dice
 
         public override string ToString()
         {
-            return _mDiceName;
+            return $"{GetNumberOfDice}d{GetSizeOfDice}";
         }
     }
 }
