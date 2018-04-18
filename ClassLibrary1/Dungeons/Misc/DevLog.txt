@@ -5,6 +5,7 @@ be gone through here preferrably before, if not, then always after.
 
 Read up on structs.
 
+GitKraken successfully tested.
 
 Tests
 	✓ Write AbilityTests
