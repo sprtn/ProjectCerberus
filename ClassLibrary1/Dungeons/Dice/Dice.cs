@@ -23,10 +23,12 @@ namespace ToolLibrary.Dungeons.Dice
             {
                 GetNumberOfDice = numberOfDice;
                 GetSizeOfDice = sizeOfDice;
+                System.Console.WriteLine($"Success: {diceName} was parsed.");
             }
             else
             {
-                System.Console.WriteLine($"Tried to parse the dice {diceName} to no avail. Make sure {contains[0]} and {contains[2]} are integers.");
+                System.Console.WriteLine($"Failed: {diceName} was not parsed.");
+                System.Console.WriteLine($"-- Make sure {contains[0]} and {contains[2]} are integers.");
                 GetSizeOfDice = 0;
                 GetNumberOfDice = 0;
             }

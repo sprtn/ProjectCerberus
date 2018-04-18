@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Threading.Tasks.Dataflow;
 using TestRunner.Tests;
 
 namespace TestRunner
 {
-    class TestRunner
+    internal class TestRunner
     {
-        static int m_testNumber = 0;
+        private static int _testNumber = 1;
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // Define test classes
             var abilityTests = new AbilityTests();
@@ -16,6 +17,7 @@ namespace TestRunner
 
             // Run tests
             RunTest(diceTests.FirstDiceTest(), diceTests.CurrentTest);
+            RunTest(diceTests.SecondDiceTest(), diceTests.CurrentTest);
             RunTest(classTests.TestClassList(), classTests.CurrentTest);
             RunTest(abilityTests.TestAbilityReturn(), abilityTests.CurrentTest);
 
@@ -25,9 +27,23 @@ namespace TestRunner
         // Simple method for running test and printing result etc. to Console
         private static void RunTest(bool testResult, string testName)
         {
-            Console.WriteLine($"Test: {testName}, " +
-                $"Success: {testResult.ToString()}, " +
-                $"Test Number: {m_testNumber++}");
+            LineBreak();
+            Write($"Test: {testName}");
+            Write($"Success: {testResult}");
+            Write($"Test Number: {_testNumber++}");
+            LineBreak();
+        }
+
+        private static void LineBreak()
+        {
+            Write("");
+            Write("--");
+            Write("");
+        }
+
+        public static void Write(string input)
+        {
+            Console.WriteLine(input);
         }
     }
 }
