@@ -9,6 +9,10 @@ namespace ToolLibrary.Dungeons.Dice
 
         public int GetNumberOfDice { get; }
 
+        /// <summary>
+        /// Constructor for the Dice class
+        /// </summary>
+        /// <param name="diceName">Takes a string containing int + char + int as a string.</param>
         public Dice(string diceName)
         {
             #region If the dice is a 'xdy', we store x as numberOfDice and y as sizeOfDice
@@ -36,15 +40,25 @@ namespace ToolLibrary.Dungeons.Dice
         }
 
         #region ThrowDice methods with overloads.
+
+        /// <summary>
+        /// Throw the dice
+        /// </summary>
+        /// <returns>Throws the number of dice and returns the value</returns>
         public int ThrowDice()
         {
             var total = 0;
             for (var i = 0; i < GetNumberOfDice; i++)
                 total += Calc.GetRandomNumber(1, GetSizeOfDice);
-            
+
             return total;
         }
 
+        /// <summary>
+        /// Throw the dice with minimum value
+        /// </summary>
+        /// <param name="min">Minimum allowed value for each dice throw</param>
+        /// <returns>Throws the number of dice and returns the value</returns>
         public int ThrowDice(int min)
         {
             var total = 0;
@@ -54,6 +68,12 @@ namespace ToolLibrary.Dungeons.Dice
             return total;
         }
 
+        /// <summary>
+        /// Throw the dice with minimum and maximum value
+        /// </summary>
+        /// <param name="min">Minimum allowed value for each dice throw</param>
+        /// <param name="max">Maximum allowed value for each dice throw</param>
+        /// <returns></returns>
         public int ThrowDice(int min, int max)
         {
             var total = 0;
@@ -73,12 +93,16 @@ namespace ToolLibrary.Dungeons.Dice
                     total += Calc.GetRandomNumber(min, GetSizeOfDice);
                 else
                     total += Calc.GetAverageNumber(min, max);
-            }               
+            }          
 
             return total;
         }
         #endregion
 
+        /// <summary>
+        /// Override of ToString
+        /// </summary>
+        /// <returns>Returns a string containing a number of dice + d + size of dice</returns>
         public override string ToString()
         {
             return $"{GetNumberOfDice}d{GetSizeOfDice}";
