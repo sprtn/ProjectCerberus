@@ -1,6 +1,6 @@
 ﻿namespace ToolLibrary.Dungeons.Mobs.Classes
 {
-    internal class ClassDescription
+    public class ClassDescription
     {
         public string Name { get; }
         public string Description { get; }

@@ -3,21 +3,21 @@
     public class AverageMeasurement
     {
         // What is being measured
-        public string m_name;
+        public string Name;
 
         // Meters, feet, lbs, kg's
-        public string m_meansOfMeasurement;
+        public string MeansOfMeasurement;
 
         // The range between top and bottom measurement.
-        public double m_averageLow;
-        public double m_averageHigh;
+        public double AverageLow;
+        public double AverageHigh;
 
         public AverageMeasurement(string name, string meansOfMeasurement, double averageLow, double averageHigh)
         {
-            m_name = name;
-            m_meansOfMeasurement = meansOfMeasurement;
-            m_averageLow = averageLow;
-            m_averageHigh = averageHigh;
+            Name = name;
+            MeansOfMeasurement = meansOfMeasurement;
+            AverageLow = averageLow;
+            AverageHigh = averageHigh;
         }
     }
 }

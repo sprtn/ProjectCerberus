@@ -3,13 +3,16 @@ using ToolLibrary.Dungeons.Proficiencies.BaseProficiencyClass;
 using ToolLibrary.Dungeons.Race.RacialTraits;
 using ToolLibrary.Dungeons.Dice;
 using ToolLibrary.Dungeons.Mobs.Classes;
+using Calc = ToolLibrary.Maths.Calculator;
 
 namespace ToolLibrary.Dungeons.Mobs.PlayerCharacter
 {
-    class PlayerCharacter
+    public class PlayerCharacter
     {
-        DungeonsRace race;
-        BaseClass baseClass;
+        public DungeonsRace Race;
+        public DungeonClass Class;
+
+        public int Height { get; set; }
 
         public PlayerCharacter()
         {
@@ -33,21 +36,21 @@ namespace ToolLibrary.Dungeons.Mobs.PlayerCharacter
             );
             #endregion
 
-            #region create a blank base class
-            baseClass = new BaseClass(
-                classDescription: new ClassDescription(
-                    "",
-                    ""
-                    ),
-                primaryAbility: 0,
-                savingThrows: null,
-                dice: new Dice.Dice(""),
-                armorProficiencies: new List<ProficiencyBools>(),
-                toolProficiencies: new List<ProficiencyBools>(),
-                skills: new List<Skills.Skill>(),
-                weaponProficiencies: new List<ProficiencyBools>()
-                );
+            #region create a Class
+            Class = new DungeonClass("Human");
             #endregion
+        }
+
+        /// <summary>
+        /// This method sets the PC's Height variable to a 
+        /// random double within the parameters of the race's
+        /// lowest and highest allowed height.
+        /// </summary>
+        public void SetRandomHeight(DungeonsRace race)
+        {
+            Height = Calc.GetRandomNumber(
+                (int)race.AverageHeight.AverageLow,
+                (int)race.AverageHeight.AverageHigh);
         }
     }
 }

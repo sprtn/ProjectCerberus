@@ -5,7 +5,7 @@ using ToolLibrary.Dungeons.Dice;
 
 namespace ToolLibrary.Dungeons.Mobs.Classes
 {
-    class BaseClass
+    public class BaseClass
     {
         #region BaseClass variables
         // Description / Misc

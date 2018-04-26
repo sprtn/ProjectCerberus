@@ -4,21 +4,21 @@ using ToolLibrary.Dungeons.Race.Helpers;
 
 namespace ToolLibrary.Dungeons.Race.RacialTraits
 {
-    internal class DungeonsRace
+    public class DungeonsRace
     {
-        public string MRaceName;
-        public List<AbilityModifier> MRacialAbilityModifiers;
-        public AverageMeasurement MAverageHeight;
-        public AverageMeasurement MAverageWeight;
-        public CreatureSize MCreatureSize;
+        public string RaceName;
+        public List<AbilityModifier> RacialAbilityModifiers;
+        public AverageMeasurement AverageHeight;
+        public AverageMeasurement AverageWeight;
+        public CreatureSize CreatureSize;
 
-        public DungeonsRace(string mRaceName, List<AbilityModifier> mRacialAbilityModifiers, AverageMeasurement mAverageHeight, AverageMeasurement mAverageWeight, CreatureSize mCreatureSize)
+        public DungeonsRace(string raceName, List<AbilityModifier> racialAbilityModifiers, AverageMeasurement averageHeight, AverageMeasurement averageWeight, CreatureSize creatureSize)
         {
-            MRaceName = mRaceName;
-            MRacialAbilityModifiers = mRacialAbilityModifiers;
-            MAverageHeight = mAverageHeight;
-            MAverageWeight = mAverageWeight;
-            MCreatureSize = mCreatureSize;
+            RaceName = raceName;
+            RacialAbilityModifiers = racialAbilityModifiers;
+            AverageHeight = averageHeight;
+            AverageWeight = averageWeight;
+            CreatureSize = creatureSize;
         }
     }
 }
