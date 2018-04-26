@@ -1,4 +1,5 @@
-﻿using ToolLibrary.Maths;
+﻿using Calc = ToolLibrary.Maths.Calculator;
+using SC = System.Console;
 
 namespace ToolLibrary.Dungeons.Dice
 {
@@ -8,7 +9,6 @@ namespace ToolLibrary.Dungeons.Dice
 
         public int GetNumberOfDice { get; }
 
-
         public Dice(string diceName)
         {
             #region If the dice is a 'xdy', we store x as numberOfDice and y as sizeOfDice
@@ -16,19 +16,19 @@ namespace ToolLibrary.Dungeons.Dice
             if (diceName.Length != 3)
                 return;
 
-            var contains = diceName.ToCharArray();
+            var diceNameAsCharArray = diceName.ToCharArray();
 
-            if (int.TryParse(contains[0].ToString(), out var numberOfDice) &&
-                int.TryParse(contains[2].ToString(), out var sizeOfDice))
+            if (int.TryParse(diceNameAsCharArray[0].ToString(), out var numberOfDice) &&
+                int.TryParse(diceNameAsCharArray[2].ToString(), out var sizeOfDice))
             {
                 GetNumberOfDice = numberOfDice;
                 GetSizeOfDice = sizeOfDice;
-                System.Console.WriteLine($"Success: {diceName} was parsed.");
+                SC.WriteLine($"Success: {diceName} was parsed.");
             }
             else
             {
-                System.Console.WriteLine($"Failed: {diceName} was not parsed.");
-                System.Console.WriteLine($"-- Make sure {contains[0]} and {contains[2]} are integers.");
+                SC.WriteLine($"Failed: {diceName} was not parsed.");
+                SC.WriteLine($"-- Make sure {diceNameAsCharArray[0]} and {diceNameAsCharArray[2]} are integers.");
                 GetSizeOfDice = 0;
                 GetNumberOfDice = 0;
             }
@@ -40,38 +40,39 @@ namespace ToolLibrary.Dungeons.Dice
         {
             var total = 0;
             for (var i = 0; i < GetNumberOfDice; i++)
-                total += Calculator.GetRandomNumber(1, GetSizeOfDice);
+                total += Calc.GetRandomNumber(1, GetSizeOfDice);
             
             return total;
         }
 
         public int ThrowDice(int min)
         {
-            int total = 0;
-            for (int i = 0; i < GetNumberOfDice; i++)
-                total += Maths.Calculator.GetRandomNumber(min, GetSizeOfDice);
+            var total = 0;
+            for (var i = 0; i < GetNumberOfDice; i++)
+                total += Calc.GetRandomNumber(min, GetSizeOfDice);
 
             return total;
         }
 
         public int ThrowDice(int min, int max)
         {
-            int total = 0;
-            for (int i = 0; i < GetNumberOfDice; i++)
+            var total = 0;
+            for (var i = 0; i < GetNumberOfDice; i++)
             {
-                int addedNumber = 0;
-                int attempts = 0;
+                var addedNumber = 0;
+                var attempts = 0;
 
+                //CodeRev: There's something off about this logic. Why do I never use addednumber?
                 while (addedNumber <= min || addedNumber >= max || attempts > 10)
                 {
-                    addedNumber = Calculator.GetRandomNumber(min, max);
+                    addedNumber = Calc.GetRandomNumber(min, max);
                     attempts++;
                 }
 
                 if (attempts < 10)
-                    total += Calculator.GetRandomNumber(min, GetSizeOfDice);
+                    total += Calc.GetRandomNumber(min, GetSizeOfDice);
                 else
-                    total += Calculator.GetAverageNumber(min, max);
+                    total += Calc.GetAverageNumber(min, max);
             }               
 
             return total;
