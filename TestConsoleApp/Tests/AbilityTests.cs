@@ -30,7 +30,7 @@ namespace TestRunner.Tests
             }
             catch (Exception e)
             {
-                Console.WriteLine("Whoops: ", e.Message);
+                Console.WriteLine($"Whoops: {e.Message}");
                 return false;
             }
         }

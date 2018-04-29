@@ -2,17 +2,17 @@
 {
     public class ProficiencyBools
     {
-        public string m_title { get; set; }
-        public int m_abilityModifier;
-        public bool m_hasProficiency { get; set; }
-        public string m_description { get; set; }
+        public string Title { get; set; }
+        public int AbilityModifier;
+        public bool HasProficiency { get; set; }
+        public string Description { get; set; }
 
         public ProficiencyBools(string title, bool hasProficiency, int abilityModifier, string description)
         {
-            m_title = title;
-            m_hasProficiency = hasProficiency;
-            m_abilityModifier = abilityModifier;
-            m_description = description;
+            Title = title;
+            HasProficiency = hasProficiency;
+            AbilityModifier = abilityModifier;
+            Description = description;
         }
     }
 }
