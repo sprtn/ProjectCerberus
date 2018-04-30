@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestRunner", "TestConsoleAp
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DungeonsDB", "DungeonsDB\DungeonsDB.sqlproj", "{314BC510-CA69-4DE3-8179-81A58577EA1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterCreator", "CharacterCreator\CharacterCreator.csproj", "{94EF3246-926B-4449-93F2-E95424CC835B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{314BC510-CA69-4DE3-8179-81A58577EA1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{314BC510-CA69-4DE3-8179-81A58577EA1F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{314BC510-CA69-4DE3-8179-81A58577EA1F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{94EF3246-926B-4449-93F2-E95424CC835B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94EF3246-926B-4449-93F2-E95424CC835B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94EF3246-926B-4449-93F2-E95424CC835B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94EF3246-926B-4449-93F2-E95424CC835B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
