@@ -25,8 +25,10 @@ For now: git clone https://github.com/sprtn/ProjectCerberus.git
 
 ## Deployment
 
+```
 TODO
 For now: Run the project locally
+```
 
 ## Built With
 
