@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ToolLibrary.Dungeons.Spells
+namespace ToolLibrary.Dungeons.Spells.SpellSchools
 {
     public class SpellSchools : List<SpellSchool>
     {

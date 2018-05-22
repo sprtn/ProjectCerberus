@@ -1,19 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using ToolLibrary.Dungeons.Mobs.Classes;
 using ToolLibrary.Dungeons.Spells;
+using ToolLibrary.Dungeons.Spells.SpellSchools;
 
 namespace Book_of_Spells
 {
@@ -27,23 +18,33 @@ namespace Book_of_Spells
 
         public MainWindow()
         {
-            dc = new DungeonClasses();
-            ss = new SpellSchools();
             InitializeComponent();
-            //InitializeDungeonClasses();
+            InitializePrivateClasses();
         }
 
-        private void InitializeDungeonClasses()
+        private void InitializePrivateClasses()
         {
-            //dc = new DungeonClasses();
+            dc = new DungeonClasses();
+            ss = new SpellSchools();
+
+            var ssd = spellSchoolDropdown;
+
+            ssd.ItemsSource = ss;
+            ssd.DisplayMemberPath = "Name";
+            ssd.SelectedValuePath = "Name";
+            ssd.SelectedValue = "{Binding Path=SpellSchool}";
+
+            //ssd.DataContext = ss;
+            //ssd.Items.Refresh();
+            //foreach (SpellSchool s in ss)
+            //    ssd.Items.Add(s);
+
+
             //var dcc = dungeonClassesCheckboxDataGridList;
             //dcc.DataContext = dc;
-            //foreach (var c in dc)
-            //{
-            //    dcc.Items.Add(c);
-            //}
+            //foreach (DungeonClass d in dc)
+            //    dcc.Items.Add(d);
 
-            //dcc.RowHeight = 25;
         }
 
         private void NextSpellcraftingTabControlTab(object sender, RoutedEventArgs e)

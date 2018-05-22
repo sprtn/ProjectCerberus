@@ -1,10 +1,10 @@
-﻿namespace ToolLibrary.Dungeons.Spells
+﻿namespace ToolLibrary.Dungeons.Spells.SpellSchools
 {
     public class SpellSchool
     {
-        public readonly string Name;
-        public readonly string Emphasis;
-        public readonly string MemberName;
+        public string Name;
+        public string Emphasis;
+        public string MemberName;
 
         public SpellSchool(string name, string emphasis, string memberName)
         {
