@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,10 +20,10 @@ namespace Book_of_Spells
         public MainWindow()
         {
             InitializeComponent();
-            InitializePrivateClasses();
+            InitializeSpellbookVariables();
         }
 
-        private void InitializePrivateClasses()
+        private void InitializeSpellbookVariables()
         {
             dc = new DungeonClasses();
             ss = new SpellSchools();
@@ -96,19 +97,28 @@ namespace Book_of_Spells
             checkBox.IsChecked = textBox.Text != "";
         }
 
-        private void matCheckbox_Checked(object sender, RoutedEventArgs e)
+        private void SetCorrespondingCheckboxValue(object sender, RoutedEventArgs e)
         {
-            // Activate the corresponding checkbox in the general info
-        }
-
-        private void verbalCheckbox_Checked(object sender, RoutedEventArgs e)
-        {
-            // Activate the corresponding checkbox in the general info
-        }
-
-        private void somaticCheckbox_Checked(object sender, RoutedEventArgs e)
-        {
-            // Activate the corresponding checkbox in the general info
+            if (sender.GetType().ToString() != "System.Windows.Controls.CheckBox")
+                return;
+            var box = (CheckBox) sender;
+            if (box.IsChecked == null)
+                return;
+            switch (box.Name)
+            {
+                case ("verbalCheckbox"):
+                    topVCheckbox.IsChecked = box.IsChecked;
+                    break;
+                case ("somaticCheckbox"):
+                    topSCheckbox.IsChecked = box.IsChecked;
+                    break;
+                case ("materialCheckbox"):
+                    topMCheckbox.IsChecked = box.IsChecked;
+                    break;
+                default:
+                    Console.WriteLine(box.Name);
+                    break;
+            }
         }
     }
 }

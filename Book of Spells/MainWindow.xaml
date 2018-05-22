@@ -63,13 +63,13 @@
                         </TabItem>
                         <TabItem Header="Comps" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="72">
                             <Grid Background="#FFE5E5E5">
-                                <CheckBox x:Name="matCheckbox" Content="Material" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="matCheckbox_Checked"/>
-                                <CheckBox x:Name="verbalCheckbox" Content="Verbal" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Checked="verbalCheckbox_Checked"/>
-                                <CheckBox x:Name="somaticCheckbox" Content="Somatic" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Checked="somaticCheckbox_Checked"/>
+                                <CheckBox x:Name="materialCheckbox" Content="Material" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Click="SetCorrespondingCheckboxValue"/>
+                                <CheckBox x:Name="verbalCheckbox" Content="Verbal" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="SetCorrespondingCheckboxValue"/>
+                                <CheckBox x:Name="somaticCheckbox" Content="Somatic" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Click="SetCorrespondingCheckboxValue"/>
                                 <TextBox HorizontalAlignment="Left" Height="88" Margin="10,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="476" AutomationProperties.HelpText="Material component explanation goes here."/>
-                                <TextBlock HorizontalAlignment="Left" Margin="112,43,0,0" TextWrapping="Wrap" Text="Verbal indicates whether the caster need free use of speech" VerticalAlignment="Top"/>
-                                <TextBlock HorizontalAlignment="Left" Margin="112,10,0,0" TextWrapping="Wrap" Text="Material components indicate whether the caster need specific items" VerticalAlignment="Top"/>
-                                <TextBlock HorizontalAlignment="Left" Margin="112,73,0,0" TextWrapping="Wrap" Text="Somatic indicates whether the caster needs free use of their arms" VerticalAlignment="Top"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="112,12,0,0" TextWrapping="Wrap" Text="Verbal indicates whether the caster need free use of speech" VerticalAlignment="Top"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="112,74,0,0" TextWrapping="Wrap" Text="Material components indicate whether the caster need specific items" VerticalAlignment="Top"/>
+                                <TextBlock HorizontalAlignment="Left" Margin="112,45,0,0" TextWrapping="Wrap" Text="Somatic indicates whether the caster needs free use of their arms" VerticalAlignment="Top"/>
                             </Grid>
                         </TabItem>
                     </TabControl>
@@ -77,10 +77,9 @@
                     <CheckBox x:Name="descriptionCheckbox" Content="Description" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Cursor="None" IsEnabled="False"/>
                     <Button Content="Next tab" HorizontalAlignment="Left" Margin="431,181,0,0" VerticalAlignment="Top" Width="75" Click="NextSpellcraftingTabControlTab"/>
                     <Button Content="Prev tab" HorizontalAlignment="Left" Margin="511,181,0,0" VerticalAlignment="Top" Width="75" Click="PreviousSpellcraftingTabControlTab"/>
-                    <CheckBox x:Name="topVCheckbox" Content="V" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Width="51"/>
-                    <CheckBox x:Name="topSCheckbox" Content="S" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="51"/>
-                    <CheckBox x:Name="topMCheckbox" Content="M
-                              " HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" Width="51"/>
+                    <CheckBox x:Name="topVCheckbox" Content="V" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Width="51" IsEnabled="False"/>
+                    <CheckBox x:Name="topSCheckbox" Content="S" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="51" IsEnabled="False"/>
+                    <CheckBox x:Name="topMCheckbox" Content="M" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" Width="51" IsEnabled="False"/>
                 </Grid>
             </TabItem>
         </TabControl>
