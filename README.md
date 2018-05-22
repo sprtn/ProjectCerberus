@@ -12,6 +12,7 @@ You might also need to be on an operating system that allows MariaDB to run if i
 
 ```
 TODO
+For now: Microsoft Visual Studio (2017)
 ```
 
 ### Installing
@@ -25,6 +26,7 @@ For now: git clone https://github.com/sprtn/ProjectCerberus.git
 ## Deployment
 
 TODO
+For now: Run the project locally
 
 ## Built With
 
