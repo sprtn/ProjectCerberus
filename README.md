@@ -37,6 +37,8 @@ For now: Run the project locally
 * [WPF](https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/introduction-to-wpf-in-vs) - Used for GUI
 * [MySql](https://dev.mysql.com/downloads/windows/visualstudio/) - The chosen database software
 * [csharp](https://docs.microsoft.com/en-us/dotnet/csharp/) - The chosen programming language
+* [ReSharper](https://www.jetbrains.com/resharper/) - Visual Studio Extension for .NET Developers for better code and standards compliance.
+* [GitKraken](https://www.gitkraken.com/) - Git GUI client
 
 
 ## Authors
