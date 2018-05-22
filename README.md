@@ -1,6 +1,6 @@
 # [ProjectCerberus](https://github.com/sprtn/ProjectCerberus)
 
-A project by Vegard Pihl Bratteng for the creation of a DnD character and spellbook management application, dependencies and derivatives.
+A project by Vegard Pihl Bratteng for the creation of a tabletop rpg character and spellbook management application, dependencies and derivatives. Currently Dungeons and Dragons 5e values will be supported, but the project shall be free to modify, and the user shall be granted the freedom to remove all pre-written database information and create their own, either by writing the code themselves as the project is under an MIT license, free of use and free to modify as you deem fit, or by the built-in "manager" pages, e.g. the spellforge for spells and similar functionality.
 
 ## Getting Started
 
