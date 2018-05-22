@@ -98,10 +98,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CharacterCreator\CharacterCreator.csproj">
-      <Project>{94ef3246-926b-4449-93f2-e95424cc835b}</Project>
-      <Name>CharacterCreator</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ClassLibrary1\ToolLibrary.csproj">
       <Project>{bbe37b8a-0ca9-44af-a73e-fdd958ef1794}</Project>
       <Name>ToolLibrary</Name>
