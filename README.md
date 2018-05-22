@@ -43,12 +43,11 @@ For now: Run the project locally
 
 ## Authors
 
-* **Vegard Pihl Bratteng** - *Everything in this build* - 
+### **Vegard Pihl Bratteng** - *Everything in this build*
 ```
 GitHub - [sprtn](https://github.com/sprtn)
 LinkedIn - [V.P.Bratteng](https://www.linkedin.com/in/vegard-pihl-bratteng-6ab846b7/)
 ```
-
 
 * [TODO](#) - Add a website.
 
