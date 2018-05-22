@@ -32,7 +32,7 @@ namespace Book_of_Spells
             ssd.ItemsSource = ss;
             ssd.DisplayMemberPath = "Name";
             ssd.SelectedValuePath = "Name";
-            ssd.SelectedValue = "{Binding Path=SpellSchool}";
+            ssd.SelectedValue = "{Binding Path=ToolLibrary.Dungeons.Spells.SpellSchools.SpellSchool}";
 
             //ssd.DataContext = ss;
             //ssd.Items.Refresh();
@@ -94,6 +94,21 @@ namespace Book_of_Spells
         private void CheckboxOnContent(CheckBox checkBox, TextBox textBox)
         {
             checkBox.IsChecked = textBox.Text != "";
+        }
+
+        private void matCheckbox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void verbalCheckbox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void somaticCheckbox_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
