@@ -14,8 +14,8 @@ namespace Book_of_Spells
     /// </summary>
     public partial class MainWindow : Window
     {
-        private DungeonClasses dc;
-        private SpellSchools ss;
+        private DungeonClasses _dungeonClasses;
+        private SpellSchools _spellSchoolsss;
 
         public MainWindow()
         {
@@ -25,27 +25,15 @@ namespace Book_of_Spells
 
         private void InitializeSpellbookVariables()
         {
-            dc = new DungeonClasses();
-            ss = new SpellSchools();
+            _dungeonClasses = new DungeonClasses();
+            _spellSchoolsss = new SpellSchools();
 
-            var ssd = spellSchoolDropdown;
+            //var ssd = spellschoolCombo;
 
-            ssd.ItemsSource = ss;
-            ssd.DisplayMemberPath = "Name";
-            ssd.SelectedValuePath = "Name";
-            ssd.SelectedValue = "{Binding Path=ToolLibrary.Dungeons.Spells.SpellSchools.SpellSchool}";
-
-            //ssd.DataContext = ss;
-            //ssd.Items.Refresh();
-            //foreach (SpellSchool s in ss)
-            //    ssd.Items.Add(s);
-
-
-            //var dcc = dungeonClassesCheckboxDataGridList;
-            //dcc.DataContext = dc;
-            //foreach (DungeonClass d in dc)
-            //    dcc.Items.Add(d);
-
+            //ssd.ItemsSource = ss;
+            //ssd.DisplayMemberPath = "Name";
+            //ssd.SelectedValuePath = "Name";
+            //ssd.SelectedValue = "{Binding Path=ToolLibrary.Dungeons.Spells.SpellSchools.SpellSchool}";
         }
 
         private void NextSpellcraftingTabControlTab(object sender, RoutedEventArgs e)
@@ -71,17 +59,15 @@ namespace Book_of_Spells
             WriteOverInformationOnFocusLoss(spellName, spellNameInput);
         }
 
-        private void WriteOverInformationOnFocusLoss(Label receiver, object sender)
+        private static void WriteOverInformationOnFocusLoss(Label receiver, object sender)
         {
-            var type = sender.GetType().ToString();
-
-            switch (type)
+            switch (sender.GetType().ToString())
             {
                 case ("System.Windows.Controls.TextBox"):
                     receiver.Content = ((TextBox)sender).Text;
                     break;
-                default:
-                    receiver.Content = "Default: " + type;
+                case ("System.Windows.Controls.ContentControl"):
+                    receiver.Content = ((ContentControl)sender).Content;
                     break;
             }
         }
