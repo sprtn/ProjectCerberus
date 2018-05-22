@@ -98,17 +98,17 @@ namespace Book_of_Spells
 
         private void matCheckbox_Checked(object sender, RoutedEventArgs e)
         {
-
+            // Activate the corresponding checkbox in the general info
         }
 
         private void verbalCheckbox_Checked(object sender, RoutedEventArgs e)
         {
-
+            // Activate the corresponding checkbox in the general info
         }
 
         private void somaticCheckbox_Checked(object sender, RoutedEventArgs e)
         {
-
+            // Activate the corresponding checkbox in the general info
         }
     }
 }
