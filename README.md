@@ -1,7 +1,3 @@
-# ProjectCerberus
-A multi-headed monster, probably going to include several projects within one, and use as sort of a development environment for several projects as we go along, then probably branch off certain projects as they outgrow their foundation. This project should not be taken seriously as it is in a sense, an incubator.
-
-
 # [ProjectCerberus](https://github.com/sprtn/ProjectCerberus)
 
 A project by Vegard Pihl Bratteng for the creation of a DnD character and spellbook management application, dependencies and derivatives.
@@ -15,14 +11,14 @@ You might also need to be on an operating system that allows MariaDB to run if i
 ### Prerequisites
 
 ```
-None (Not applicable)
+TODO
 ```
 
 ### Installing
 
 ```
 TODO
-git clone https://github.com/sprtn/ProjectCerberus.git
+For now: git clone https://github.com/sprtn/ProjectCerberus.git
 ```
 
 
