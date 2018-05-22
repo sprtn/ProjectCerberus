@@ -82,7 +82,6 @@ namespace Book_of_Spells
                     break;
                 default:
                     receiver.Content = "Default: " + type;
-                    Console.WriteLine("Could not recognize type:" + type);
                     break;
             }
         }
@@ -99,7 +98,8 @@ namespace Book_of_Spells
 
         private void SetCorrespondingCheckboxValue(object sender, RoutedEventArgs e)
         {
-            if (sender.GetType().ToString() != "System.Windows.Controls.CheckBox")
+            if (sender.GetType().ToString() != "System.Windows.Controls.CheckBox" && 
+                sender.GetType().ToString() != "System.Windows.Controls.Primitives.ToggleButton")
                 return;
             var box = (CheckBox) sender;
             if (box.IsChecked == null)
@@ -114,9 +114,6 @@ namespace Book_of_Spells
                     break;
                 case ("materialCheckbox"):
                     topMCheckbox.IsChecked = box.IsChecked;
-                    break;
-                default:
-                    Console.WriteLine(box.Name);
                     break;
             }
         }

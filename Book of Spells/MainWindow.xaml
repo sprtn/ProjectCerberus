@@ -33,16 +33,17 @@
                                     <ColumnDefinition Width="0*"/>
                                 </Grid.ColumnDefinitions>
                                 <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="181" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="292"/>
-                                <ComboBox x:Name="spellSchoolDropdown" 
-                                          HorizontalAlignment="Left" 
-                                          Margin="340,54,0,0" 
-                                          VerticalAlignment="Top" 
-                                          Width="120" IsSynchronizedWithCurrentItem="True"/>
+
                                 <DataGrid x:Name="dungeonClassesCheckboxDataGridList" HorizontalAlignment="Left" Height="144" Margin="22,34,0,0" VerticalAlignment="Top" Width="264" IsSynchronizedWithCurrentItem="True">
                                     <DataGrid.DataContext>
                                         <Classes:DungeonClasses/>
                                     </DataGrid.DataContext>
                                 </DataGrid>
+                                <ComboBox x:Name="spellschoolCombo" HorizontalAlignment="Left" Margin="345,83,0,0" VerticalAlignment="Top" Width="120" IsEnabled="True" IsReadOnly="True" ShouldPreserveUserEnteredPrefix="False">
+                                    <ComboBox.DataContext>
+                                        <SpellSchools:SpellSchools Capacity="8"/>
+                                    </ComboBox.DataContext>
+                                </ComboBox>
                             </Grid>
                         </TabItem>
                         <TabItem x:Name="DurCastTab" Header="Dur&amp;Cast" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="72">
@@ -65,7 +66,7 @@
                             <Grid Background="#FFE5E5E5">
                                 <CheckBox x:Name="materialCheckbox" Content="Material" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Click="SetCorrespondingCheckboxValue"/>
                                 <CheckBox x:Name="verbalCheckbox" Content="Verbal" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="SetCorrespondingCheckboxValue"/>
-                                <CheckBox x:Name="somaticCheckbox" Content="Somatic" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Click="SetCorrespondingCheckboxValue"/>
+                                <CheckBox x:Name="somaticCheckbox" Content="Somatic" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Checked="SetCorrespondingCheckboxValue"/>
                                 <TextBox HorizontalAlignment="Left" Height="88" Margin="10,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="476" AutomationProperties.HelpText="Material component explanation goes here."/>
                                 <TextBlock HorizontalAlignment="Left" Margin="112,12,0,0" TextWrapping="Wrap" Text="Verbal indicates whether the caster need free use of speech" VerticalAlignment="Top"/>
                                 <TextBlock HorizontalAlignment="Left" Margin="112,74,0,0" TextWrapping="Wrap" Text="Material components indicate whether the caster need specific items" VerticalAlignment="Top"/>
