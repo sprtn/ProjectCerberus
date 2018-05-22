@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace ToolLibrary.Dungeons.Mobs.Classes
 {
@@ -23,6 +24,8 @@ namespace ToolLibrary.Dungeons.Mobs.Classes
             AddOriginalClass("Half-Elf");
             AddOriginalClass("Elf");
         }
+
+        public List<DungeonClass> GetDungeonClasses() => this;
 
         /// <summary>
         /// This class adds original DungeonClasses to the list.

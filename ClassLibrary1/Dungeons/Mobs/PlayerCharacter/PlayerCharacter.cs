@@ -17,7 +17,7 @@ namespace ToolLibrary.Dungeons.Mobs.PlayerCharacter
         public PlayerCharacter()
         {
             #region create a blank race.
-            race = new DungeonsRace(
+            Race = new DungeonsRace(
             "",
             new List<Abilities.AbilityModifier>(),
             new Race.Helpers.AverageMeasurement(

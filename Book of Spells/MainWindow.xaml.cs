@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToolLibrary.Dungeons.Mobs.Classes;
+using ToolLibrary.Dungeons.Spells;
 
 namespace Book_of_Spells
 {
@@ -20,9 +22,28 @@ namespace Book_of_Spells
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DungeonClasses dc;
+        private SpellSchools ss;
+
         public MainWindow()
         {
+            dc = new DungeonClasses();
+            ss = new SpellSchools();
             InitializeComponent();
+            //InitializeDungeonClasses();
+        }
+
+        private void InitializeDungeonClasses()
+        {
+            //dc = new DungeonClasses();
+            //var dcc = dungeonClassesCheckboxDataGridList;
+            //dcc.DataContext = dc;
+            //foreach (var c in dc)
+            //{
+            //    dcc.Items.Add(c);
+            //}
+
+            //dcc.RowHeight = 25;
         }
 
         private void NextSpellcraftingTabControlTab(object sender, RoutedEventArgs e)
