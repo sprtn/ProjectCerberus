@@ -1,0 +1,45 @@
+﻿<Window x:Class="Book_of_Spells.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Book_of_Spells"
+        mc:Ignorable="d"
+        Title="Book of Spells" Height="492.159" Width="620.372">
+    <Grid>
+        <TabControl x:Name="SpellBook" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Stretch">
+            <TabItem Header="Spells">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Morellonomicon">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="Spellcrafting" Header="Spellcrafting" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="82" Margin="-2,-2,-26,0">
+                <Grid Background="#FFE5E5E5">
+                    <TabControl x:Name="SpellcraftingTabControl" HorizontalAlignment="Left" Height="207" Margin="10,206,0,0" VerticalAlignment="Top" Width="576" TabStripPlacement="Left">
+                        <TabItem x:Name="SpellDescTab" Header="Description">
+                            <Grid Background="#FFE5E5E5">
+                                <TextBox x:Name="spellNameInput" HorizontalAlignment="Left" Height="23" Margin="91,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" LostFocus="spellNameInput_LostFocus"/>
+                                <TextBox x:Name="spellDescriptionInput" HorizontalAlignment="Left" Height="160" Margin="91,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" LostFocus="TextBox_LostFocus"/>
+                                <Label x:Name="nameLabel" Content="Spell Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="23" Width="76"/>
+                                <Label x:Name="descLabel" Content="Description" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Height="29" Width="76"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="TabItem">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="0*"/>
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                    <Label x:Name="spellName" Content="New Spell" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="29" Width="226"/>
+                    <CheckBox x:Name="descriptionCheckbox" Content="Description" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Cursor="None" IsEnabled="False"/>
+                    <Button Content="Next tab" HorizontalAlignment="Left" Margin="431,181,0,0" VerticalAlignment="Top" Width="75" Click="NextSpellcraftingTabControlTab"/>
+                    <Button Content="Prev tab" HorizontalAlignment="Left" Margin="511,181,0,0" VerticalAlignment="Top" Width="75" Click="PreviousSpellcraftingTabControlTab"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
