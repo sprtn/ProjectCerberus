@@ -18,8 +18,8 @@ namespace Book_of_Spells
         private DungeonClasses _dungeonClasses;
         private SpellSchools _spellSchoolsss;
 
-        string tempMatTextboxText;
-        private string matTextboxHelpText = "Please insert a description of the materials required for the spell.";
+        string _tempMatTextboxText;
+        private const string MatTextboxHelpText = "Please insert a description of the materials required for the spell.";
 
         public MainWindow()
         {
@@ -110,13 +110,13 @@ namespace Book_of_Spells
                     SetCheckedTo(TopMCheckbox, box);
                     if (TopMCheckbox.IsChecked != null)
                     {
-                        if (!string.IsNullOrEmpty(MatTextbox.Text) && MatTextbox.Text != matTextboxHelpText)
-                            tempMatTextboxText = MatTextbox.Text;
+                        if (!string.IsNullOrEmpty(MatTextbox.Text) && MatTextbox.Text != MatTextboxHelpText)
+                            _tempMatTextboxText = MatTextbox.Text;
 
                         MatTextbox.Text = (bool) TopMCheckbox.IsChecked ? 
-                            string.IsNullOrEmpty(tempMatTextboxText) ? 
-                                matTextboxHelpText : 
-                                tempMatTextboxText : 
+                            string.IsNullOrEmpty(_tempMatTextboxText) ? 
+                                MatTextboxHelpText : 
+                                _tempMatTextboxText : 
                             string.Empty;
 
                         MatTextbox.IsEnabled = (bool)TopMCheckbox.IsChecked;
@@ -142,13 +142,13 @@ namespace Book_of_Spells
         #region matTextboxAutomation
         private void MatTextbox_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (MatTextbox.Text == matTextboxHelpText || string.IsNullOrEmpty(MatTextbox.Text))
+            if (MatTextbox.Text == MatTextboxHelpText || string.IsNullOrEmpty(MatTextbox.Text))
                 MatTextbox.Text = string.Empty;
         }
 
         private void MatTextbox_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            tempMatTextboxText = MatTextbox.Text;
+            _tempMatTextboxText = MatTextbox.Text;
         }
         #endregion
     }
