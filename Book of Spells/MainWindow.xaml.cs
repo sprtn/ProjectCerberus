@@ -18,6 +18,9 @@ namespace Book_of_Spells
         private DungeonClasses _dungeonClasses;
         private SpellSchools _spellSchoolsss;
 
+        string tempMatTextboxText;
+        private string matTextboxHelpText = "Please insert a description of the materials required for the spell.";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -97,29 +100,55 @@ namespace Book_of_Spells
                 return;
             switch (box.Name)
             {
-                case ("verbalCheckbox"):
-                    SetCheckedTo(topVCheckbox, box);
+                case ("VerbalCheckbox"):
+                    SetCheckedTo(TopVCheckbox, box);
                     break;
-                case ("somaticCheckbox"):
-                    SetCheckedTo(topSCheckbox, box);
+                case ("SomaticCheckbox"):
+                    SetCheckedTo(TopSCheckbox, box);
                     break;
-                case ("materialCheckbox"):
-                    SetCheckedTo(topMCheckbox, box);
+                case ("MaterialCheckbox"):
+                    SetCheckedTo(TopMCheckbox, box);
+                    if (TopMCheckbox.IsChecked != null)
+                    {
+                        if (!string.IsNullOrEmpty(MatTextbox.Text) && MatTextbox.Text != matTextboxHelpText)
+                            tempMatTextboxText = MatTextbox.Text;
+
+                        MatTextbox.Text = (bool) TopMCheckbox.IsChecked ? 
+                            string.IsNullOrEmpty(tempMatTextboxText) ? 
+                                matTextboxHelpText : 
+                                tempMatTextboxText : 
+                            string.Empty;
+
+                        MatTextbox.IsEnabled = (bool)TopMCheckbox.IsChecked;
+                    }
                     break;
             }
         }
 
-        private void SetCheckedTo(CheckBox receiverCheckBox, object senderObject)
+        private static void SetCheckedTo(CheckBox receiverCheckBox, object senderObject)
         {
             switch (senderObject.GetType().ToString())
             {
                 case ("System.Windows.Controls.TextBox"):
-                    receiverCheckBox.IsChecked = ((TextBox)senderObject).Text != "";
+                    receiverCheckBox.IsChecked = ((TextBox) senderObject).Text != "";
                     break;
                 case ("System.Windows.Controls.CheckBox"):
                     receiverCheckBox.IsChecked = ((CheckBox) senderObject).IsChecked;
                     break;
             }
+        }
+        #endregion
+
+        #region matTextboxAutomation
+        private void MatTextbox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (MatTextbox.Text == matTextboxHelpText || string.IsNullOrEmpty(MatTextbox.Text))
+                MatTextbox.Text = string.Empty;
+        }
+
+        private void MatTextbox_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            tempMatTextboxText = MatTextbox.Text;
         }
         #endregion
     }
