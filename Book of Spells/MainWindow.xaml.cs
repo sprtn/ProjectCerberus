@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using ToolLibrary.Dungeons.Mobs.Classes;
 using ToolLibrary.Dungeons.Spells;
@@ -37,12 +38,7 @@ namespace Book_of_Spells
         }
 
         #region Tab control, tab selection manager
-        /// <summary>
-        /// Controls a tab elements selected index
-        /// </summary>
-        /// <param name="tab">The TabControl element to manage</param>
-        /// <param name="increment">Increment (true) or Decrement (false).</param>
-        private void ChangeTabIndex(TabControl tab, bool increment)
+        private void ChangeTabIndex(Selector tab, bool increment)
         {
             var curIndex = tab.SelectedIndex;
             if (curIndex == 0 && !increment)
@@ -88,6 +84,7 @@ namespace Book_of_Spells
         {
             SetCheckedTo(descriptionCheckbox, spellDescriptionInput);
         }
+        #endregion
 
         #region Checkbox setters
         private void SetCorrespondingCheckboxValue(object sender, RoutedEventArgs e)
@@ -124,7 +121,6 @@ namespace Book_of_Spells
                     break;
             }
         }
-        #endregion
         #endregion
     }
 }

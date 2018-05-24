@@ -89,7 +89,7 @@
                     <Label Content="Components" HorizontalAlignment="Center" Margin="305,14,207,0" VerticalAlignment="Top" Width="84" Height="29"/>
                     <Label Content="Length and types" HorizontalAlignment="Left" Margin="450,15,0,0" VerticalAlignment="Top"/>
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="61" Margin="10,15,0,0" Stroke="Black" VerticalAlignment="Top" Width="248"/>
-                    <Label x:Name="spellName" Content="New Spell" HorizontalAlignment="Left" Margin="22,21,0,0" VerticalAlignment="Top" Height="29" Width="226"/>
+                    <Label x:Name="spellName" Content="Nameless spell" HorizontalAlignment="Left" Margin="22,21,0,0" VerticalAlignment="Top" Height="29" Width="226"/>
                     <CheckBox x:Name="descriptionCheckbox" Content="Description" HorizontalAlignment="Left" Margin="22,51,0,0" VerticalAlignment="Top" Cursor="None" IsEnabled="False"/>
                     <Label Content="Classes: 0" HorizontalAlignment="Left" Margin="110,45,0,0" VerticalAlignment="Top" Height="32" Width="62"/>
                     <CheckBox Content="School" HorizontalAlignment="Left" Margin="177,51,0,0" VerticalAlignment="Top" IsEnabled="False"/>
