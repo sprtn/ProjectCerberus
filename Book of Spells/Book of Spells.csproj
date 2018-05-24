@@ -89,15 +89,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Properties\DataSources\ToolLibrary.Dungeons.Abilities.Abilities.datasource" />
-    <None Include="Properties\DataSources\ToolLibrary.Dungeons.Abilities.Ability.datasource" />
-    <None Include="Properties\DataSources\ToolLibrary.Dungeons.Abilities.AbilityModifier.datasource" />
-    <None Include="Properties\DataSources\ToolLibrary.Dungeons.Mobs.Classes.DungeonClass.datasource" />
-    <None Include="Properties\DataSources\ToolLibrary.Dungeons.Mobs.Classes.DungeonClasses.datasource" />
-    <None Include="Properties\DataSources\ToolLibrary.Dungeons.Spells.Classes.ClassList.datasource" />
-    <None Include="Properties\DataSources\ToolLibrary.Dungeons.Spells.Classes.ClassListClass.datasource" />
-    <None Include="Properties\DataSources\ToolLibrary.Dungeons.Spells.SpellSchools.SpellSchool.datasource" />
-    <None Include="Properties\DataSources\ToolLibrary.Dungeons.Spells.SpellSchools.SpellSchools.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

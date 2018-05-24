@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Book_of_Spells"
         xmlns:SavingThrows="clr-namespace:ToolLibrary.Dungeons.Proficiencies.SavingThrows;assembly=ToolLibrary" xmlns:Classes="clr-namespace:ToolLibrary.Dungeons.Mobs.Classes;assembly=ToolLibrary" xmlns:SpellSchools="clr-namespace:ToolLibrary.Dungeons.Spells.SpellSchools;assembly=ToolLibrary" x:Class="Book_of_Spells.MainWindow"
         mc:Ignorable="d"
-        Title="Book of Spells" Height="492.159" Width="620.372">
+        Title="Book of Spells" Height="408.159" Width="620.372">
     <Grid>
         <TabControl x:Name="SpellBook" HorizontalAlignment="Stretch" Margin="10,10,0,0" VerticalAlignment="Stretch">
             <TabItem Header="Spells">
@@ -16,8 +16,10 @@
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
             <TabItem x:Name="Spellcrafting" Header="Spellcrafting" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="82" Margin="-2,-2,-26,0">
-                <Grid Background="#FFE5E5E5">
-                    <TabControl x:Name="SpellcraftingTabControl" HorizontalAlignment="Left" Height="207" Margin="10,206,0,0" VerticalAlignment="Top" Width="576" TabStripPlacement="Left">
+                <Grid Background="#FFE5E5E5" Height="423" VerticalAlignment="Top">
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="62" Margin="263,14,0,0" Stroke="Black" VerticalAlignment="Top" Width="157"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="62" Margin="425,14,0,0" Stroke="Black" VerticalAlignment="Top" Width="157"/>
+                    <TabControl x:Name="SpellcraftingTabControl" HorizontalAlignment="Left" Height="207" Margin="10,118,0,0" VerticalAlignment="Top" Width="576" TabStripPlacement="Left">
                         <TabItem x:Name="SpellDescTab" Header="Description">
                             <Grid Background="#FFE5E5E5">
                                 <TextBox x:Name="spellNameInput" HorizontalAlignment="Left" Height="23" Margin="91,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" LostFocus="spellNameInput_LostFocus"/>
@@ -34,7 +36,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="181" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="292"/>
 
-                                <DataGrid x:Name="dungeonClassesCheckboxDataGridList" HorizontalAlignment="Left" Height="144" Margin="22,34,0,0" VerticalAlignment="Top" Width="264" IsSynchronizedWithCurrentItem="True">
+                                <DataGrid x:Name="dungeonClassesCheckboxDataGridList" HorizontalAlignment="Left" Height="155" Margin="22,24,0,0" VerticalAlignment="Top" Width="271" IsSynchronizedWithCurrentItem="True">
                                     <DataGrid.DataContext>
                                         <Classes:DungeonClasses/>
                                     </DataGrid.DataContext>
@@ -59,14 +61,15 @@
                         <TabItem x:Name="HigherLevelsTab" Header="Higher" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="72">
                             <Grid Background="#FFE5E5E5">
                                 <Label x:Name="higherLevelLabel" Content="Levels the Spell can be cast at" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                                <DataGrid HorizontalAlignment="Left" Height="150" Margin="10,41,0,0" VerticalAlignment="Top" Width="476"/>
+                                <DataGrid HorizontalAlignment="Left" Height="150" Margin="10,41,0,0" VerticalAlignment="Top" Width="318"/>
+                                <TextBox x:Name="HigherLevelDescription" HorizontalAlignment="Left" Height="150" Margin="333,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" IsEnabled="False"/>
                             </Grid>
                         </TabItem>
                         <TabItem Header="Comps" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="72">
                             <Grid Background="#FFE5E5E5">
                                 <CheckBox x:Name="materialCheckbox" Content="Material" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Click="SetCorrespondingCheckboxValue"/>
                                 <CheckBox x:Name="verbalCheckbox" Content="Verbal" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="SetCorrespondingCheckboxValue"/>
-                                <CheckBox x:Name="somaticCheckbox" Content="Somatic" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Checked="SetCorrespondingCheckboxValue"/>
+                                <CheckBox x:Name="somaticCheckbox" Content="Somatic" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Click="SetCorrespondingCheckboxValue" Width="63"/>
                                 <TextBox HorizontalAlignment="Left" Height="88" Margin="10,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="476" AutomationProperties.HelpText="Material component explanation goes here."/>
                                 <TextBlock HorizontalAlignment="Left" Margin="112,12,0,0" TextWrapping="Wrap" Text="Verbal indicates whether the caster need free use of speech" VerticalAlignment="Top"/>
                                 <TextBlock HorizontalAlignment="Left" Margin="112,74,0,0" TextWrapping="Wrap" Text="Material components indicate whether the caster need specific items" VerticalAlignment="Top"/>
@@ -74,13 +77,22 @@
                             </Grid>
                         </TabItem>
                     </TabControl>
-                    <Label x:Name="spellName" Content="New Spell" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="29" Width="226"/>
-                    <CheckBox x:Name="descriptionCheckbox" Content="Description" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Cursor="None" IsEnabled="False"/>
-                    <Button Content="Next tab" HorizontalAlignment="Left" Margin="431,181,0,0" VerticalAlignment="Top" Width="75" Click="NextSpellcraftingTabControlTab"/>
-                    <Button Content="Prev tab" HorizontalAlignment="Left" Margin="511,181,0,0" VerticalAlignment="Top" Width="75" Click="PreviousSpellcraftingTabControlTab"/>
-                    <CheckBox x:Name="topVCheckbox" Content="V" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Width="51" IsEnabled="False"/>
-                    <CheckBox x:Name="topSCheckbox" Content="S" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="51" IsEnabled="False"/>
-                    <CheckBox x:Name="topMCheckbox" Content="M" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" Width="51" IsEnabled="False"/>
+                    <Button Content="Next tab" HorizontalAlignment="Left" Margin="425,87,0,0" VerticalAlignment="Top" Width="75" Click="NextSpellcraftingTabControlTab"/>
+                    <Button Content="Prev tab" HorizontalAlignment="Left" Margin="505,87,0,0" VerticalAlignment="Top" Width="75" Click="PreviousSpellcraftingTabControlTab"/>
+                    <CheckBox x:Name="topVCheckbox" Content="V" HorizontalAlignment="Left" Margin="275,48,0,0" VerticalAlignment="Top" Width="51" IsEnabled="False"/>
+                    <CheckBox x:Name="topSCheckbox" Content="S" HorizontalAlignment="Left" Margin="325,48,0,0" VerticalAlignment="Top" Width="51" IsEnabled="False"/>
+                    <CheckBox x:Name="topMCheckbox" Content="M" HorizontalAlignment="Left" Margin="375,48,0,0" VerticalAlignment="Top" Width="51" IsEnabled="False"/>
+                    <Label Content="Duration:" HorizontalAlignment="Left" Margin="425,33,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Casting:" HorizontalAlignment="Left" Margin="425,49,0,0" VerticalAlignment="Top"/>
+                    <Label Content="1 minute" HorizontalAlignment="Left" Margin="494,33,0,0" VerticalAlignment="Top"/>
+                    <Label Content="1 bonus action" HorizontalAlignment="Left" Margin="494,49,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Components" HorizontalAlignment="Center" Margin="305,14,207,0" VerticalAlignment="Top" Width="84" Height="29"/>
+                    <Label Content="Length and types" HorizontalAlignment="Left" Margin="450,15,0,0" VerticalAlignment="Top"/>
+                    <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="61" Margin="10,15,0,0" Stroke="Black" VerticalAlignment="Top" Width="248"/>
+                    <Label x:Name="spellName" Content="New Spell" HorizontalAlignment="Left" Margin="22,21,0,0" VerticalAlignment="Top" Height="29" Width="226"/>
+                    <CheckBox x:Name="descriptionCheckbox" Content="Description" HorizontalAlignment="Left" Margin="22,51,0,0" VerticalAlignment="Top" Cursor="None" IsEnabled="False"/>
+                    <Label Content="Classes: 0" HorizontalAlignment="Left" Margin="110,45,0,0" VerticalAlignment="Top" Height="32" Width="62"/>
+                    <CheckBox Content="School" HorizontalAlignment="Left" Margin="177,51,0,0" VerticalAlignment="Top" IsEnabled="False"/>
                 </Grid>
             </TabItem>
         </TabControl>
