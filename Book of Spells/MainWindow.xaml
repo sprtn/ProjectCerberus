@@ -16,7 +16,7 @@
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
             <TabItem x:Name="Spellcrafting" Header="Spellcrafting" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="82" Margin="-2,-2,-26,0">
-                <Grid Background="#FFE5E5E5" Height="423" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5" Height="337" VerticalAlignment="Top">
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="62" Margin="263,14,0,0" Stroke="Black" VerticalAlignment="Top" Width="157"/>
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="62" Margin="425,14,0,0" Stroke="Black" VerticalAlignment="Top" Width="157"/>
                     <TabControl x:Name="SpellcraftingTabControl" HorizontalAlignment="Left" Height="207" Margin="10,118,0,0" VerticalAlignment="Top" Width="576" TabStripPlacement="Left">
