@@ -36,6 +36,44 @@ namespace Book_of_Spells
             //ssd.SelectedValue = "{Binding Path=ToolLibrary.Dungeons.Spells.SpellSchools.SpellSchool}";
         }
 
+        #region Tab control, tab selection manager
+        /// <summary>
+        /// Controls a tab elements selected index
+        /// </summary>
+        /// <param name="tab">The TabControl element to manage</param>
+        /// <param name="increment">Increment (true) or Decrement (false).</param>
+        private void ChangeTabIndex(TabControl tab, bool increment)
+        {
+            var curIndex = tab.SelectedIndex;
+            if (curIndex == 0 && !increment)
+                return;
+            tab.SelectedIndex = increment ? curIndex + 1 : curIndex - 1;
+        }
+        #endregion
+
+        #region Information from sender to receiverCheckBox
+        private static void SenderToReceiverManager(Label receiver, object sender)
+        {
+            var text = string.Empty;
+            switch (sender.GetType().ToString())
+            {
+                case ("System.Windows.Controls.TextBox"):
+                    text = ((TextBox) sender).Text;
+                    break;
+                case ("System.Windows.Controls.ContentControl"):
+                    text = ((ContentControl) sender).Content.ToString();
+                    break;
+            }
+            receiver.Content = string.IsNullOrEmpty(text) ? "Nameless spell" : text;
+        }
+        #endregion
+
+        #region events
+        private void spellNameInput_LostFocus(object sender, RoutedEventArgs e)
+        {
+            SenderToReceiverManager(spellName, spellNameInput);
+        }
+
         private void NextSpellcraftingTabControlTab(object sender, RoutedEventArgs e)
         {
             ChangeTabIndex(SpellcraftingTabControl, true);
@@ -46,62 +84,47 @@ namespace Book_of_Spells
             ChangeTabIndex(SpellcraftingTabControl, false);
         }
 
-        private void ChangeTabIndex(TabControl tab, bool increment)
-        {
-            var curIndex = tab.SelectedIndex;
-            if (curIndex == 0 && !increment)
-                return;
-            tab.SelectedIndex = increment ? curIndex + 1 : curIndex - 1;
-        }
-
-        private void spellNameInput_LostFocus(object sender, RoutedEventArgs e)
-        {
-            WriteOverInformationOnFocusLoss(spellName, spellNameInput);
-        }
-
-        private static void WriteOverInformationOnFocusLoss(Label receiver, object sender)
-        {
-            switch (sender.GetType().ToString())
-            {
-                case ("System.Windows.Controls.TextBox"):
-                    receiver.Content = ((TextBox)sender).Text;
-                    break;
-                case ("System.Windows.Controls.ContentControl"):
-                    receiver.Content = ((ContentControl)sender).Content;
-                    break;
-            }
-        }
-
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            CheckboxOnContent(descriptionCheckbox, spellDescriptionInput);
+            SetCheckedTo(descriptionCheckbox, spellDescriptionInput);
         }
 
-        private void CheckboxOnContent(CheckBox checkBox, TextBox textBox)
-        {
-            checkBox.IsChecked = textBox.Text != "";
-        }
-
+        #region Checkbox setters
         private void SetCorrespondingCheckboxValue(object sender, RoutedEventArgs e)
         {
-            if (sender.GetType().ToString() != "System.Windows.Controls.CheckBox" && 
+            if (sender.GetType().ToString() != "System.Windows.Controls.CheckBox" &&
                 sender.GetType().ToString() != "System.Windows.Controls.Primitives.ToggleButton")
                 return;
-            var box = (CheckBox) sender;
+            var box = (CheckBox)sender;
             if (box.IsChecked == null)
                 return;
             switch (box.Name)
             {
                 case ("verbalCheckbox"):
-                    topVCheckbox.IsChecked = box.IsChecked;
+                    SetCheckedTo(topVCheckbox, box);
                     break;
                 case ("somaticCheckbox"):
-                    topSCheckbox.IsChecked = box.IsChecked;
+                    SetCheckedTo(topSCheckbox, box);
                     break;
                 case ("materialCheckbox"):
-                    topMCheckbox.IsChecked = box.IsChecked;
+                    SetCheckedTo(topMCheckbox, box);
                     break;
             }
         }
+
+        private void SetCheckedTo(CheckBox receiverCheckBox, object senderObject)
+        {
+            switch (senderObject.GetType().ToString())
+            {
+                case ("System.Windows.Controls.TextBox"):
+                    receiverCheckBox.IsChecked = ((TextBox)senderObject).Text != "";
+                    break;
+                case ("System.Windows.Controls.CheckBox"):
+                    receiverCheckBox.IsChecked = ((CheckBox) senderObject).IsChecked;
+                    break;
+            }
+        }
+        #endregion
+        #endregion
     }
 }
