@@ -6,6 +6,8 @@
         public string Emphasis;
         public string MemberName;
 
+        public SpellSchool GetSpellSchool() => this;
+
         public SpellSchool(string name, string emphasis, string memberName)
         {
             Name = name;

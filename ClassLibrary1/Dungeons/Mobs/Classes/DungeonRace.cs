@@ -3,7 +3,7 @@ using ToolLibrary.Dungeons.Proficiencies.BaseProficiencyClass;
 
 namespace ToolLibrary.Dungeons.Mobs.Classes
 {
-    public class DungeonClass
+    public class DungeonRace
     {
         public string ClassName { get; }
         private BaseClass _baseClass;
@@ -26,14 +26,14 @@ namespace ToolLibrary.Dungeons.Mobs.Classes
             );
         }
 
-        public DungeonClass(string className, bool isOriginalClass)
+        public DungeonRace(string className, bool isOriginalClass)
         {
             ClassName = className;
             IsOriginalClass = isOriginalClass;
             SetupDungeonClass(className);
         }
 
-        public DungeonClass(string className)
+        public DungeonRace(string className)
         {
             ClassName = className;
             IsOriginalClass = false;

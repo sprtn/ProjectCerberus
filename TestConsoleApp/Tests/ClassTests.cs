@@ -10,7 +10,7 @@ namespace TestRunner.Tests
 
         public bool TestClassList()
         {
-            CurrentTest = "Test Class List";
+            CurrentTest = "Test Race List";
 
             var classList = new ClassList(new List<string>
             {

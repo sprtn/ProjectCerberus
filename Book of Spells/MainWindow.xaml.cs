@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using System.Windows.Data;
 using ToolLibrary.Dungeons.Mobs.Classes;
-using ToolLibrary.Dungeons.Spells;
 using ToolLibrary.Dungeons.Spells.SpellSchools;
 
 namespace Book_of_Spells
@@ -15,7 +11,7 @@ namespace Book_of_Spells
     /// </summary>
     public partial class MainWindow : Window
     {
-        private DungeonClasses _dungeonClasses;
+        private DungeonRaces _dungeonRaces;
         private SpellSchools _spellSchoolsss;
 
         string _tempMatTextboxText;
@@ -29,7 +25,7 @@ namespace Book_of_Spells
 
         private void InitializeSpellbookVariables()
         {
-            _dungeonClasses = new DungeonClasses();
+            _dungeonRaces = new DungeonRaces();
             _spellSchoolsss = new SpellSchools();
 
             //var ssd = spellschoolCombo;
@@ -85,7 +81,7 @@ namespace Book_of_Spells
 
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            SetCheckedTo(descriptionCheckbox, spellDescriptionInput);
+            SetCheckedTo(DescriptionCheckbox, spellDescriptionInput);
         }
         #endregion
 

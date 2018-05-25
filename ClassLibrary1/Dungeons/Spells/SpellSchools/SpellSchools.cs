@@ -4,6 +4,8 @@ namespace ToolLibrary.Dungeons.Spells.SpellSchools
 {
     public class SpellSchools : List<SpellSchool>
     {
+        public SpellSchools GetSpellSchools() => this;
+
         public SpellSchools()
         {
             foreach (List<string> s in _schoolsInfoList)

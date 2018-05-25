@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace ToolLibrary.Dungeons.Mobs.Classes
 {
-    public class DungeonClasses : List<DungeonClass>
+    public class DungeonRaces : List<DungeonRace>
     {
         /* These should come from a database or even a txt file
          and the values for the different classes should simply be
@@ -16,33 +16,34 @@ namespace ToolLibrary.Dungeons.Mobs.Classes
         /// These values shall be added from the relational 
         /// database once we get there.
         /// </summary>
-        public DungeonClasses()
+        public DungeonRaces()
         {
-            AddOriginalClass("Human");
-            AddOriginalClass("Half-Orc");
-            AddOriginalClass("Orc");
-            AddOriginalClass("Half-Elf");
-            AddOriginalClass("Elf");
+            AddOriginalRace("Human");
+            AddOriginalRace("Half-Orc");
+            AddOriginalRace("Orc");
+            AddOriginalRace("Half-Elf");
+            AddOriginalRace("Elf");
+            AddOriginalRace("Goblin");
         }
 
-        public List<DungeonClass> GetDungeonClasses() => this;
+        public List<DungeonRace> GetDungeonRaces() => this;
 
         /// <summary>
-        /// This class adds original DungeonClasses to the list.
+        /// This class adds original DungeonRaces to the list.
         /// </summary>
-        /// <param name="className">Class name is used for lookup purposes.</param>
-        private void AddOriginalClass(string className)
+        /// <param name="className">Race name is used for lookup purposes.</param>
+        private void AddOriginalRace(string className)
         {
-            Add(new DungeonClass(className, true));
+            Add(new DungeonRace(className, true));
         }
 
         /// <summary>
         /// This method adds a new dungeon class to to the list
         /// </summary>
-        /// <param name="dungeonClass">The DungeonClass which is to be added</param>
-        public void AddDungeonClass(DungeonClass dungeonClass)
+        /// <param name="dungeonRace">The DungeonRace which is to be added</param>
+        public void AddDungeonClass(DungeonRace dungeonRace)
         {
-            Add(dungeonClass);
+            Add(dungeonRace);
         }
 
         /// <summary>
@@ -64,10 +65,10 @@ namespace ToolLibrary.Dungeons.Mobs.Classes
             if (multiplicity == null)
                 multiplicity = true;
 
-            /* Here we use Linq lookup to access the first DungeonClass
+            /* Here we use Linq lookup to access the first DungeonRace
              with the corresponding ClassName variable to the input
              if multiplicity is false. Else, we provide the RemoveAll
-             function with a working call for any DungeonClass we want
+             function with a working call for any DungeonRace we want
              to remove.
              */
 

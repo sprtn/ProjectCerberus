@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Book_of_Spells"
-        xmlns:SavingThrows="clr-namespace:ToolLibrary.Dungeons.Proficiencies.SavingThrows;assembly=ToolLibrary" xmlns:Classes="clr-namespace:ToolLibrary.Dungeons.Mobs.Classes;assembly=ToolLibrary" xmlns:SpellSchools="clr-namespace:ToolLibrary.Dungeons.Spells.SpellSchools;assembly=ToolLibrary" x:Class="Book_of_Spells.MainWindow"
+        xmlns:spellSchools="clr-namespace:ToolLibrary.Dungeons.Spells.SpellSchools;assembly=ToolLibrary"
         mc:Ignorable="d"
         Title="Book of Spells" Height="408.159" Width="620.372">
     <Grid>
@@ -28,7 +28,7 @@
                                 <Label x:Name="descLabel" Content="Description" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Height="29" Width="76"/>
                             </Grid>
                         </TabItem>
-                        <TabItem x:Name="ClassesTab" Header="Classes" Height="50">
+                        <TabItem x:Name="ClassesTab" Header="Racees" Height="50">
                             <Grid Background="#FFE5E5E5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
@@ -37,14 +37,13 @@
                                 <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="181" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="292"/>
 
                                 <DataGrid x:Name="dungeonClassesCheckboxDataGridList" HorizontalAlignment="Left" Height="155" Margin="22,24,0,0" VerticalAlignment="Top" Width="271" IsSynchronizedWithCurrentItem="True">
-                                    <DataGrid.DataContext>
-                                        <Classes:DungeonClasses/>
-                                    </DataGrid.DataContext>
+
                                 </DataGrid>
-                                <ComboBox x:Name="spellschoolCombo" HorizontalAlignment="Left" Margin="318,47,0,0" VerticalAlignment="Top" Width="145" IsEnabled="True" IsReadOnly="True" ShouldPreserveUserEnteredPrefix="False">
+                                <ComboBox x:Name="spellschoolCombo" HorizontalAlignment="Left" Margin="318,47,0,0" VerticalAlignment="Top" Width="145" IsEnabled="True" ShouldPreserveUserEnteredPrefix="False" IsReadOnly="True">
                                     <ComboBox.DataContext>
-                                        <SpellSchools:SpellSchools Capacity="8"/>
+                                        <spellSchools:SpellSchools/>
                                     </ComboBox.DataContext>
+
                                 </ComboBox>
                                 <ComboBox HorizontalAlignment="Left" Margin="404,128,0,0" VerticalAlignment="Top" Width="82"/>
                                 <TextBox HorizontalAlignment="Left" Height="23" Margin="404,165,0,0" TextWrapping="Wrap" Text="Cast Time" VerticalAlignment="Top" Width="82" MaxLines="1"/>
@@ -88,8 +87,8 @@
                     <Label Content="Length and types" HorizontalAlignment="Left" Margin="450,15,0,0" VerticalAlignment="Top"/>
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="61" Margin="10,15,0,0" Stroke="Black" VerticalAlignment="Top" Width="248"/>
                     <Label x:Name="spellName" Content="Nameless spell" HorizontalAlignment="Left" Margin="22,21,0,0" VerticalAlignment="Top" Height="29" Width="226"/>
-                    <CheckBox x:Name="descriptionCheckbox" Content="Description" HorizontalAlignment="Left" Margin="22,51,0,0" VerticalAlignment="Top" Cursor="None" IsEnabled="False"/>
-                    <Label Content="Classes: 0" HorizontalAlignment="Left" Margin="110,45,0,0" VerticalAlignment="Top" Height="32" Width="62"/>
+                    <CheckBox x:Name="DescriptionCheckbox" Content="Description" HorizontalAlignment="Left" Margin="22,51,0,0" VerticalAlignment="Top" Cursor="None" IsEnabled="False"/>
+                    <Label Content="Racees: 0" HorizontalAlignment="Left" Margin="110,45,0,0" VerticalAlignment="Top" Height="32" Width="62"/>
                     <CheckBox Content="School" HorizontalAlignment="Left" Margin="177,51,0,0" VerticalAlignment="Top" IsEnabled="False"/>
                 </Grid>
             </TabItem>
