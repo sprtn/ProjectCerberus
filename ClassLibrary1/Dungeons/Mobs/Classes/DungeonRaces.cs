@@ -1,41 +1,23 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 
 namespace ToolLibrary.Dungeons.Mobs.Classes
 {
-    public class DungeonRaces : List<DungeonRace>
+    public partial class DungeonRaces : List<DungeonRace>
     {
-        /* These should come from a database or even a txt file
-         and the values for the different classes should simply be
-         fetched, asynchronously, by name. */
-
         /// <summary>
         /// Simple constructor adding in the different classes.
-        /// 
         /// These values shall be added from the relational 
         /// database once we get there.
         /// </summary>
         public DungeonRaces()
         {
-            AddOriginalRace("Human");
-            AddOriginalRace("Half-Orc");
-            AddOriginalRace("Orc");
-            AddOriginalRace("Half-Elf");
-            AddOriginalRace("Elf");
-            AddOriginalRace("Goblin");
+            foreach (var raceName in Enum.GetNames(typeof(Race)))
+                Add(new DungeonRace(raceName, true));
         }
 
         public List<DungeonRace> GetDungeonRaces() => this;
-
-        /// <summary>
-        /// This class adds original DungeonRaces to the list.
-        /// </summary>
-        /// <param name="className">Race name is used for lookup purposes.</param>
-        private void AddOriginalRace(string className)
-        {
-            Add(new DungeonRace(className, true));
-        }
 
         /// <summary>
         /// This method adds a new dungeon class to to the list
@@ -57,24 +39,24 @@ namespace ToolLibrary.Dungeons.Mobs.Classes
         /// delete any such class from the database.
         /// </summary>
         /// <param name="className">String of a class name</param>
-        /// <param name="multiplicity">Bool which decides whether all instances of</param>
+        /// <param name="removeAll">Bool which decides whether to remove all instances found.</param>
         /// <returns>True if a class with the corresponding name was deleted from this list.</returns>
-        public bool RemoveDungeonClass(string className, bool? multiplicity)
+        public bool RemoveDungeonClass(string className, bool? removeAll)
         {
             className = className.ToLower();
-            if (multiplicity == null)
-                multiplicity = true;
+            if (removeAll == null)
+                removeAll = true;
 
             /* Here we use Linq lookup to access the first DungeonRace
              with the corresponding ClassName variable to the input
-             if multiplicity is false. Else, we provide the RemoveAll
+             if removeAll is false. Else, we provide the RemoveAll
              function with a working call for any DungeonRace we want
              to remove.
              */
 
             if (!Contains(this.FirstOrDefault(x => x.ClassName.ToLower() == className))) return false;
             {
-                if ((bool) multiplicity)
+                if ((bool) removeAll)
                     Remove(this.FirstOrDefault(x => x.ClassName.ToLower() == className && !x.IsOriginalClass));
                 else
                     RemoveAll(x => x.ClassName.ToLower() == className && !x.IsOriginalClass);

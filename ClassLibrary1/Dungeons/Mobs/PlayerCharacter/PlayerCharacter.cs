@@ -13,9 +13,7 @@ namespace ToolLibrary.Dungeons.Mobs.PlayerCharacter
 
         public PlayerCharacter()
         {
-            #region create a Race
             Race = new DungeonRace("Human");
-            #endregion
         }
 
         /// <summary>
