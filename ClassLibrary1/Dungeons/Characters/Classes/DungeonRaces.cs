@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ToolLibrary.Dungeons.Characters.Classes;
+using DungeonRace = ToolLibrary.Dungeons.Characters.Race.SizeModifiers.DungeonRace;
 
 namespace ToolLibrary.Dungeons.Mobs.Classes
 {
@@ -48,18 +50,18 @@ namespace ToolLibrary.Dungeons.Mobs.Classes
                 removeAll = true;
 
             /* Here we use Linq lookup to access the first DungeonRace
-             with the corresponding ClassName variable to the input
+             with the corresponding RaceName variable to the input
              if removeAll is false. Else, we provide the RemoveAll
              function with a working call for any DungeonRace we want
              to remove.
              */
 
-            if (!Contains(this.FirstOrDefault(x => x.ClassName.ToLower() == className))) return false;
+            if (!Contains(this.FirstOrDefault(x => x.RaceName.ToLower() == className))) return false;
             {
                 if ((bool) removeAll)
-                    Remove(this.FirstOrDefault(x => x.ClassName.ToLower() == className && !x.IsOriginalClass));
+                    Remove(this.FirstOrDefault(x => x.RaceName.ToLower() == className && !x.IsOriginalRace));
                 else
-                    RemoveAll(x => x.ClassName.ToLower() == className && !x.IsOriginalClass);
+                    RemoveAll(x => x.RaceName.ToLower() == className && !x.IsOriginalRace);
                 return true;
             }
         }

@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using ToolLibrary.Dungeons.Characters.Race;
 using ToolLibrary.Dungeons.Mobs.Classes;
 using ToolLibrary.Dungeons.Spells.SpellSchools;
 
@@ -11,7 +12,7 @@ namespace Book_of_Spells
     /// </summary>
     public partial class MainWindow : Window
     {
-        private DungeonRaces _dungeonRaces;
+        private Race _race;
         private SpellSchools _spellSchoolsss;
 
         string _tempMatTextboxText;
@@ -25,7 +26,7 @@ namespace Book_of_Spells
 
         private void InitializeSpellbookVariables()
         {
-            _dungeonRaces = new DungeonRaces();
+            _race = new Race();
             _spellSchoolsss = new SpellSchools();
 
             //var ssd = spellschoolCombo;

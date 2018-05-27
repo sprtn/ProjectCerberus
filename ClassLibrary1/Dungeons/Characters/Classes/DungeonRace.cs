@@ -1,13 +1,16 @@
 ﻿using System.Collections.Generic;
+using ToolLibrary.Dungeons.Mobs.Classes;
 using ToolLibrary.Dungeons.Proficiencies.BaseProficiencyClass;
 
-namespace ToolLibrary.Dungeons.Mobs.Classes
+namespace ToolLibrary.Dungeons.Characters.Classes
 {
-    public class DungeonRace
+    public partial class DungeonRace
     {
-        public string ClassName { get; }
+
+
+        public string RaceName { get; }
         private BaseClass _baseClass;
-        public bool IsOriginalClass { get; }
+        public bool IsOriginalRace { get; }
 
         private void SetupDungeonClass(string className)
         {
@@ -26,18 +29,18 @@ namespace ToolLibrary.Dungeons.Mobs.Classes
             );
         }
 
-        public DungeonRace(string className, bool isOriginalClass)
+        public DungeonRace(string raceName, bool isOriginalRace)
         {
-            ClassName = className;
-            IsOriginalClass = isOriginalClass;
-            SetupDungeonClass(className);
+            RaceName = raceName;
+            IsOriginalRace = isOriginalRace;
+            SetupDungeonClass(raceName);
         }
 
-        public DungeonRace(string className)
+        public DungeonRace(string raceName)
         {
-            ClassName = className;
-            IsOriginalClass = false;
-            SetupDungeonClass(className);
+            RaceName = raceName;
+            IsOriginalRace = false;
+            SetupDungeonClass(raceName);
         }
     }
 }

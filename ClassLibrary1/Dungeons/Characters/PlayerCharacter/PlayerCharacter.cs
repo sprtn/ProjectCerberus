@@ -1,6 +1,8 @@
-﻿using ToolLibrary.Dungeons.Race.RacialTraits;
+﻿using ToolLibrary.Dungeons.Characters.Classes;
+using ToolLibrary.Dungeons.Race.RacialTraits;
 using ToolLibrary.Dungeons.Mobs.Classes;
 using Calc = ToolLibrary.Maths.Calculator;
+using DungeonRace = ToolLibrary.Dungeons.Characters.Race.SizeModifiers.DungeonRace;
 
 namespace ToolLibrary.Dungeons.Mobs.PlayerCharacter
 {

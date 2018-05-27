@@ -1,10 +1,10 @@
-﻿namespace ToolLibrary.Dungeons.Mobs.Classes
+﻿namespace ToolLibrary.Dungeons.Characters.Race
 {
-    public partial class DungeonRaces
+    public partial class Race
     {
-        public enum Race
+        public enum RaceEnums
         {
-            Dragonborn = 1,
+            Dragonborn,
             Dwarf,
             Elf,
             Gnome,

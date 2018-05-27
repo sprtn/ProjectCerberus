@@ -23,7 +23,7 @@ namespace ToolLibrary.Dungeons.Spells.Classes
 
             // Remove the "false" in the previous foreach to accomodate
             // for a search function through the incoming List<string>
-            // to look for a match if ClassName fits with any name provided.
+            // to look for a match if RaceName fits with any name provided.
             // Need to rewrite the search function. It is not important for now.
             foreach (string classListClass in list)
             {
