@@ -88,7 +88,7 @@
                     <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="61" Margin="10,15,0,0" Stroke="Black" VerticalAlignment="Top" Width="248"/>
                     <Label x:Name="spellName" Content="Nameless spell" HorizontalAlignment="Left" Margin="22,21,0,0" VerticalAlignment="Top" Height="29" Width="226"/>
                     <CheckBox x:Name="DescriptionCheckbox" Content="Description" HorizontalAlignment="Left" Margin="22,51,0,0" VerticalAlignment="Top" Cursor="None" IsEnabled="False"/>
-                    <Label Content="Racees: 0" HorizontalAlignment="Left" Margin="110,45,0,0" VerticalAlignment="Top" Height="32" Width="62"/>
+                    <Label Content="Races: 0" HorizontalAlignment="Left" Margin="110,45,0,0" VerticalAlignment="Top" Height="32" Width="62"/>
                     <CheckBox Content="School" HorizontalAlignment="Left" Margin="177,51,0,0" VerticalAlignment="Top" IsEnabled="False"/>
                 </Grid>
             </TabItem>
