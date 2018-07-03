@@ -15,8 +15,8 @@ namespace ToolLibrary.Dungeons.Mobs.Classes
         /// </summary>
         public DungeonRaces()
         {
-            foreach (var raceName in Enum.GetNames(typeof(Race)))
-                Add(new DungeonRace(raceName, true));
+            //foreach (var raceName in Enum.GetNames(typeof(DungeonRace)))
+            //    Add(new DungeonRace(raceName, true));
         }
 
         public List<DungeonRace> GetDungeonRaces() => this;
@@ -43,7 +43,7 @@ namespace ToolLibrary.Dungeons.Mobs.Classes
         /// <param name="className">String of a class name</param>
         /// <param name="removeAll">Bool which decides whether to remove all instances found.</param>
         /// <returns>True if a class with the corresponding name was deleted from this list.</returns>
-        public bool RemoveDungeonClass(string className, bool? removeAll)
+        public void RemoveDungeonClass(string className, bool? removeAll)
         {
             className = className.ToLower();
             if (removeAll == null)
@@ -56,14 +56,14 @@ namespace ToolLibrary.Dungeons.Mobs.Classes
              to remove.
              */
 
-            if (!Contains(this.FirstOrDefault(x => x.RaceName.ToLower() == className))) return false;
-            {
-                if ((bool) removeAll)
-                    Remove(this.FirstOrDefault(x => x.RaceName.ToLower() == className && !x.IsOriginalRace));
-                else
-                    RemoveAll(x => x.RaceName.ToLower() == className && !x.IsOriginalRace);
-                return true;
-            }
+            //if (!Contains(this.FirstOrDefault(x => x.RaceName.ToLower() == className))) return false;
+            //{
+            //    if ((bool) removeAll)
+            //        Remove(this.FirstOrDefault(x => x.RaceName.ToLower() == className && !x.IsOriginalRace));
+            //    else
+            //        RemoveAll(x => x.RaceName.ToLower() == className && !x.IsOriginalRace);
+            //    return true;
+            //}
         }
     }
 }

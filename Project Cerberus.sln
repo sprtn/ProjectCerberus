@@ -5,13 +5,11 @@ VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolLibrary", "ClassLibrary1\ToolLibrary.csproj", "{BBE37B8A-0CA9-44AF-A73E-FDD958EF1794}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestRunner", "TestConsoleApp\TestRunner.csproj", "{1FAD010F-3A2A-43E8-91D3-282844E07D01}"
-EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DungeonsDB", "DungeonsDB\DungeonsDB.sqlproj", "{314BC510-CA69-4DE3-8179-81A58577EA1F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Book of Spells", "Book of Spells\Book of Spells.csproj", "{46760F00-1A60-4EC4-AF31-76C592AE3B1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonsWebApp", "DungeonsWebApp\DungeonsWebApp.csproj", "{8DFCF222-58E9-454F-BF79-4CCB8EC2930F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonsWebApp", "DungeonsWebApp\DungeonsWebApp.csproj", "{8DFCF222-58E9-454F-BF79-4CCB8EC2930F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{4B622D28-93C7-44CF-AC3D-25879620AF2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,16 +21,6 @@ Global
 		{BBE37B8A-0CA9-44AF-A73E-FDD958EF1794}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBE37B8A-0CA9-44AF-A73E-FDD958EF1794}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBE37B8A-0CA9-44AF-A73E-FDD958EF1794}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1FAD010F-3A2A-43E8-91D3-282844E07D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1FAD010F-3A2A-43E8-91D3-282844E07D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1FAD010F-3A2A-43E8-91D3-282844E07D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1FAD010F-3A2A-43E8-91D3-282844E07D01}.Release|Any CPU.Build.0 = Release|Any CPU
-		{314BC510-CA69-4DE3-8179-81A58577EA1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{314BC510-CA69-4DE3-8179-81A58577EA1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{314BC510-CA69-4DE3-8179-81A58577EA1F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{314BC510-CA69-4DE3-8179-81A58577EA1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{314BC510-CA69-4DE3-8179-81A58577EA1F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{314BC510-CA69-4DE3-8179-81A58577EA1F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{46760F00-1A60-4EC4-AF31-76C592AE3B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{46760F00-1A60-4EC4-AF31-76C592AE3B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46760F00-1A60-4EC4-AF31-76C592AE3B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +29,10 @@ Global
 		{8DFCF222-58E9-454F-BF79-4CCB8EC2930F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DFCF222-58E9-454F-BF79-4CCB8EC2930F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DFCF222-58E9-454F-BF79-4CCB8EC2930F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B622D28-93C7-44CF-AC3D-25879620AF2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B622D28-93C7-44CF-AC3D-25879620AF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B622D28-93C7-44CF-AC3D-25879620AF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B622D28-93C7-44CF-AC3D-25879620AF2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
