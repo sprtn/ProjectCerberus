@@ -1,113 +1,131 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using ToolLibrary.Logger.Models;
 
 namespace ToolLibrary.Logger
 {
-    public static class Logger
+    public class JsonLogger
     {
-        public static void SetLogfolder(string path)
-        {
-            _logFolder = path.EndsWith("\\") ? path : $"{path}\\";
-
-            if (!Directory.Exists(_logFolder))
-            {
-                Directory.CreateDirectory(_logFolder);
-            }
-        }
-
-        private static string _logFolder = "";
-
-        #region ErrorLog with override
-        public static void ErrorLog(string input)
-        {
-            LogMetaHandler(LogType.Error, input: input);
-        }
-
-        public static void ErrorLog(Exception exception)
-        {
-            LogMetaHandler(LogType.Error, exception: exception);
-        }
-
-        public static void ErrorLog(string input = "", Exception exception = null)
-        {
-            LogMetaHandler(LogType.Error, input, exception);
-        }
-        #endregion
-
-        #region DebugLog with override
-        public static void DebugLog(string input)
-        {
-            LogMetaHandler(LogType.Debug, input: input);
-        }
-
-        public static void DebugLog(Exception exception)
-        {
-            LogMetaHandler(LogType.Debug, exception: exception);
-        }
-
-        public static void DebugLog(string input = "", Exception exception = null)
-        {
-            LogMetaHandler(LogType.Debug, input, exception);
-        }
-        #endregion
-
-        private static void LogMetaHandler(LogType logType, string input = "", Exception exception = null)
-        {
-            if (exception == null && string.IsNullOrEmpty(input))
-            {
-                LogWorker(LogType.Debug, "Trying to log data which isn't provided");
-            }
-            else if (exception == null)
-            {
-                LogWorker(LogType.Debug, input: input);
-            }
-            else if (string.IsNullOrEmpty(input))
-            {
-                LogWorker(LogType.Debug, exception: exception);
-            }
-        }
-
-        private static void LogWorker(LogType logType, string input = "", Exception exception = null)
-        {
-            try
-            {
-                StringBuilder fileName = new StringBuilder();
-
-                fileName.Append(_logFolder);
-                fileName.Append(logType);
-                fileName.Append("_Log_");
-                fileName.Append(DateTime.Today);
-                fileName.Append(".txt");
-
-                using (StreamWriter w = File.AppendText(fileName.ToString()))
-                {
-                    w.Write("\r\nLog Entry : ");
-                    w.WriteLine($"{DateTime.Now.ToShortTimeString()} : ");
-                    w.WriteLine(input);
-                    w.WriteLine("-------------------------------");
-
-                    // Handle possible incoming Exception
-                    if (exception == null)
-                        return;
-
-                    w.WriteLine("Exception message : ");
-                    w.WriteLine(exception.Message);
-                    w.WriteLine("Exception stacktrace : ");
-                    w.WriteLine(exception.StackTrace);
-                    w.WriteLine("-------------------------------");
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Exception not handled");
-            }
-        }
-
         private enum LogType
         {
             Error,
             Debug
+        }
+
+        public void LogDebug()
+        {
+            Log(LogType.Debug, DateTime.Now.ToShortDateString());
+        }
+
+        public void LogDebug(string logObject)
+        {
+            Log(LogType.Debug, logObject);
+        }
+
+        public void LogDebug(LogObject logObject)
+        {
+            Log(LogType.Debug, logObject);
+        }
+
+        public void LogError()
+        {
+            Log(LogType.Error, DateTime.Now.ToShortDateString());
+        }
+
+        public void LogError(string logObject)
+        {
+            Log(LogType.Error, logObject);
+        }
+
+        public void LogError(LogObject logObject)
+        {
+            Log(LogType.Error, logObject);
+        }
+
+        private static void Log(LogType logType, string s)
+        {
+            Log(logType, new LogObject(s));
+        }
+
+        private static void Log(LogType logType, LogObject obj)
+        {
+            try
+            {
+                SetPaths(logType, out StringBuilder dirPath, out string path);
+
+                if (!Directory.Exists(dirPath.ToString()))
+                {
+                    Directory.CreateDirectory(dirPath.ToString());
+                }
+
+                string fileInfo;
+
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    fileInfo = sr.ReadToEnd();
+                }
+
+                if (string.IsNullOrEmpty(fileInfo))
+                {
+                    return;
+                }
+
+                List<LogObject> logObjects = new List<LogObject>();
+
+                try
+                {
+                    logObjects =
+                        Newtonsoft.Json.JsonConvert.DeserializeObject<List<LogObject>>(fileInfo);
+
+                    logObjects.Add(obj);
+                }
+                catch
+                {
+                    logObjects = new List<LogObject>
+                    {
+                        obj
+                    };
+                }
+                finally
+                {
+                    using (StreamWriter sw = File.CreateText(path))
+                    {
+                        if (logObjects.Count == 0)
+                        {
+                            logObjects.Add(new LogObject("Could not add logObjects. Is there a difference in versioning? Overwriting previous log."));
+                        }
+
+                        string json = Newtonsoft.Json.JsonConvert.SerializeObject(logObjects);
+
+                        sw.Write(json);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                new JsonLogger().LogError(e.Message);
+            }
+        }
+
+        private static void SetPaths(LogType logType, out StringBuilder dirPath, out string path)
+        {
+            dirPath = new StringBuilder(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+            dirPath.Append("\\Cerberus");
+
+            switch (logType)
+            {
+                case LogType.Debug:
+                    path = dirPath + "\\Debug.txt";
+                    break;
+                case LogType.Error:
+                    path = dirPath + "\\Error.txt";
+                    break;
+                default:
+                    path = dirPath + "\\Log.txt";
+                    break;
+            }
         }
     }
 }

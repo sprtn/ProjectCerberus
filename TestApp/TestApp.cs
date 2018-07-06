@@ -1,14 +1,22 @@
-﻿namespace TestApp
+﻿using ToolLibrary.Logger;
+using ToolLibrary.Logger.Models;
+
+namespace TestApp
 {
     internal class TestApp
     {
         public TestApp()
         {
-            ToolLibrary.Logger.Logger.ErrorLog("test");
-            ToolLibrary.Logger.Logger.DebugLog("debugtest");
-            ToolLibrary.Logger.Logger.SetLogfolder("testFolder");
-            ToolLibrary.Logger.Logger.ErrorLog("test2");
-            ToolLibrary.Logger.Logger.DebugLog("debugtest2");
+            JsonLogger logger = new JsonLogger();
+
+            logger.LogError("Test error 1");
+            logger.LogDebug("Test debug 1");
+
+            logger.LogError(new LogObject("test 2"));
+            logger.LogDebug(new LogObject("test debug 2"));
+
+            logger.LogError();
+            logger.LogDebug();
         }
     }
 }
