@@ -14,6 +14,7 @@ namespace ToolLibrary.Logger
             Debug
         }
 
+        #region Loggers with overrides
         public void LogDebug()
         {
             Log(LogType.Debug, DateTime.Now.ToShortDateString());
@@ -21,7 +22,7 @@ namespace ToolLibrary.Logger
 
         public void LogDebug(string logObject)
         {
-            Log(LogType.Debug, logObject);
+            Log(LogType.Debug, new LogObject(logObject));
         }
 
         public void LogDebug(LogObject logObject)
@@ -36,7 +37,7 @@ namespace ToolLibrary.Logger
 
         public void LogError(string logObject)
         {
-            Log(LogType.Error, logObject);
+            Log(LogType.Error, new LogObject(logObject));
         }
 
         public void LogError(LogObject logObject)
@@ -48,6 +49,7 @@ namespace ToolLibrary.Logger
         {
             Log(logType, new LogObject(s));
         }
+        #endregion
 
         private static void Log(LogType logType, LogObject obj)
         {
@@ -62,39 +64,37 @@ namespace ToolLibrary.Logger
 
                 string fileInfo;
 
-                using (StreamReader sr = new StreamReader(path))
+                if (File.Exists(path))
                 {
-                    fileInfo = sr.ReadToEnd();
+                    using (StreamReader sr = new StreamReader(path))
+                    {
+                        fileInfo = sr.ReadToEnd();
+                    }
+                }
+                else
+                {
+                    fileInfo = "";
                 }
 
-                if (string.IsNullOrEmpty(fileInfo))
-                {
-                    return;
-                }
-
-                List<LogObject> logObjects = new List<LogObject>();
+                Log logObjects = new Log();
 
                 try
                 {
-                    logObjects =
-                        Newtonsoft.Json.JsonConvert.DeserializeObject<List<LogObject>>(fileInfo);
-
-                    logObjects.Add(obj);
+                    logObjects = Newtonsoft.Json.JsonConvert.DeserializeObject<Log>(fileInfo) ?? new Log();
                 }
-                catch
+                catch (Exception e)
                 {
-                    logObjects = new List<LogObject>
-                    {
-                        obj
-                    };
+                    Console.WriteLine(e.Message + ":" + e.StackTrace);
                 }
                 finally
                 {
+                    logObjects.LogObjects.Add(obj);
+
                     using (StreamWriter sw = File.CreateText(path))
                     {
-                        if (logObjects.Count == 0)
+                        if (logObjects.LogObjects.Count == 0)
                         {
-                            logObjects.Add(new LogObject("Could not add logObjects. Is there a difference in versioning? Overwriting previous log."));
+                            logObjects.LogObjects.Add(new LogObject("Could not add logObjects. Is there a difference in versioning? Overwriting previous log."));
                         }
 
                         string json = Newtonsoft.Json.JsonConvert.SerializeObject(logObjects);
