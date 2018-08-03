@@ -4,33 +4,33 @@
     {
         public string GetTitle()
         {
-            return m_title;
+            return Title;
         }
 
         public int GetAbilityScore()
         {
-            return m_abilityScore;
+            return AbilityScore;
         }
 
         public void SetAbilityScore(int newAbilityScore)
         {
-            m_abilityScore = newAbilityScore;
+            AbilityScore = newAbilityScore;
         }
 
         public int GetAbilityModifier()
         {
-            if (m_abilityScore >= 10)
-                return (m_abilityScore - 10) / 2;
-            return ((m_abilityScore - 11) / 2);
+            if (AbilityScore >= 10)
+                return (AbilityScore - 10) / 2;
+            return ((AbilityScore - 11) / 2);
         }
 
-        private string m_title { get; }
-        private int m_abilityScore { get; set; }
+        public string Title { get; }
+        public int AbilityScore { get; set; }
 
         public Ability(string title, int abilityScore)
         {
-            m_title = title;
-            m_abilityScore = abilityScore;
+            Title = title;
+            AbilityScore = abilityScore;
         }
     }
 }

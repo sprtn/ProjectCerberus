@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using ToolLibrary.Dungeons.Proficiencies.BaseProficiencyClass;
 using ToolLibrary.Dungeons.Skills;
-using ToolLibrary.Dungeons.Dice;
 
 namespace ToolLibrary.Dungeons.Mobs.Classes
 {
@@ -9,7 +8,7 @@ namespace ToolLibrary.Dungeons.Mobs.Classes
     {
         #region BaseClass variables
         // Description / Misc
-        public ClassDescription ClassDescription { get; }
+        public string ClassDescription { get; }
         
         // Primary ability
         public int PrimaryAbility { get; set; }
@@ -29,7 +28,7 @@ namespace ToolLibrary.Dungeons.Mobs.Classes
         public List<Skill> Skills { get; set; }
         #endregion
 
-        public BaseClass(ClassDescription classDescription, int primaryAbility, Proficiencies.SavingThrows.SavingThrows savingThrows, Dice.Dice dice, List<ProficiencyBools> armorProficiencies, List<ProficiencyBools> weaponProficiencies, List<ProficiencyBools> toolProficiencies, List<Skill> skills)
+        public BaseClass(string classDescription, int primaryAbility, Proficiencies.SavingThrows.SavingThrows savingThrows, Dice.Dice dice, List<ProficiencyBools> armorProficiencies, List<ProficiencyBools> weaponProficiencies, List<ProficiencyBools> toolProficiencies, List<Skill> skills)
         {
             #region set input data to local values
 

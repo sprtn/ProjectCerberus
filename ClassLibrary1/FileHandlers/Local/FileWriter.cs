@@ -7,19 +7,11 @@ namespace ToolLibrary.FileHandlers.Local
 {
     public static class FileWriter
     {
-        public static void WriteFile(string path, string contents)
+        public static void WriteFile(string name, string contents)
         {
             try
             {
-                if (!Directory.Exists(FileHandlersCfg.FolderPath))
-                    Directory.CreateDirectory(FileHandlersCfg.FolderPath);
-
-                if (string.IsNullOrEmpty(path))
-                    path = $"Cerberus_{DateTime.Now.ToLongTimeString()}{DateTime.Now.ToBinary()}";
-
-                path = $"{FileHandlersCfg.FolderPath}\\{path}";
-
-                using (StreamWriter sw = File.CreateText(path))
+                using (StreamWriter sw = File.CreateText(FileHandlersCfg.FilePathRacesFile))
                 {
                     sw.Write(contents);
                 }
@@ -30,14 +22,14 @@ namespace ToolLibrary.FileHandlers.Local
             }
         }
 
-        public static void WriteFile(string path, object o)
+        public static void WriteFile(string name, object o)
         {
-            WriteFile(path, Newtonsoft.Json.JsonConvert.SerializeObject(o));
+            WriteFile(name, Newtonsoft.Json.JsonConvert.SerializeObject(o));
         }
 
-        public static void WriteFile(string path, IEnumerable<object> ieo)
+        public static void WriteFile(string name, IEnumerable<object> ieo)
         {
-            WriteFile(path, Newtonsoft.Json.JsonConvert.SerializeObject(ieo));
+            WriteFile(name, Newtonsoft.Json.JsonConvert.SerializeObject(ieo));
         }
     }
 }

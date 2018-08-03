@@ -1,12 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+using ToolLibrary.Dungeons.Race;
 using ToolLibrary.Dungeons.Race.RacialTraits;
+using ToolLibrary.FileHandlers;
 using ToolLibrary.FileHandlers.Local;
+using ToolLibrary.FileHandlers.Logger;
 
 namespace Spellcraft
 {
     public partial class SpellcraftForm : Form
     {
+        public JsonLogger JLogger = new JsonLogger();
+
         public SpellcraftForm()
         {
             InitializeComponent();
@@ -15,16 +22,39 @@ namespace Spellcraft
 
         private void ExecuteStartup()
         {
+            FileHandlersCfg.GenerateFolders();
             PopulateDefaults();
         }
 
         private void PopulateDefaults()
         {
-            _description = string.Empty;
-            races = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DungeonsRace>>(FileReader.ReadFile("Races"));
+            PopulateRaces();
+        }
+
+        private void PopulateRaces()
+        {
+            try
+            {
+                Races = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DefaultRace>>(FileReader.ReadFile(FileHandlersCfg.FilePathRacesFile));
+            }
+            catch (Exception e)
+            {
+                JLogger.LogError(e);
+                JLogger.LogDebug("Races could not be found. Creating new default Races file.");
+            }
+
+            if (Races != null)
+                if (Races.Any())
+                    return;
+
+            Races = new ListOfDefaultRaces();
+
+            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(Races);
+
+            FileWriter.WriteFile(FileHandlersCfg.FilePathRacesFile, jsonString);
         }
 
         private string _description;
-        private List<DungeonsRace> races;
+        public List<DefaultRace> Races;
     }
 }

@@ -12,7 +12,7 @@ namespace Book_of_Spells
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Race _race;
+        private DefaultRace _defaultRace;
         private SpellSchools _spellSchoolsss;
 
         string _tempMatTextboxText;
@@ -26,7 +26,7 @@ namespace Book_of_Spells
 
         private void InitializeSpellbookVariables()
         {
-            _race = new Race();
+            _defaultRace = new DefaultRace();
             _spellSchoolsss = new SpellSchools();
 
             //var ssd = spellschoolCombo;

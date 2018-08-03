@@ -196,7 +196,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 36);
             this.button1.TabIndex = 8;
-            this.button1.Text = "Available to 0 races";
+            this.button1.Text = "Available to 0 Races";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // spellschoolDropdown

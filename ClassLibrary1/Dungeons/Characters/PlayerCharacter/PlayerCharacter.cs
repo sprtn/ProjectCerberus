@@ -15,7 +15,7 @@ namespace ToolLibrary.Dungeons.Mobs.PlayerCharacter
 
         public PlayerCharacter()
         {
-            //Race = new DungeonRace("Human");
+            //DefaultRace = new DungeonRace("Human");
         }
 
         /// <summary>

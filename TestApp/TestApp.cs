@@ -1,6 +1,5 @@
 ﻿using ToolLibrary.FileHandlers.Logger;
 using ToolLibrary.FileHandlers.Logger.Models;
-using ToolLibrary.Logger;
 
 namespace TestApp
 {

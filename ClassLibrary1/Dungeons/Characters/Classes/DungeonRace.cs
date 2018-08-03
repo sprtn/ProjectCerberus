@@ -4,7 +4,7 @@ using ToolLibrary.Dungeons.Proficiencies.BaseProficiencyClass;
 
 namespace ToolLibrary.Dungeons.Characters.Classes
 {
-    public partial class DungeonRace
+    public class DungeonRace
     {
 
 
@@ -14,19 +14,26 @@ namespace ToolLibrary.Dungeons.Characters.Classes
 
         private void SetupDungeonClass(string className)
         {
-            _baseClass = new BaseClass(
-                classDescription: new ClassDescription(
-                    "",
-                    ""
-                ),
-                primaryAbility: 0,
-                savingThrows: null,
-                dice: new Dice.Dice(""),
-                armorProficiencies: new List<ProficiencyBools>(),
-                toolProficiencies: new List<ProficiencyBools>(),
-                skills: new List<Skills.Skill>(),
-                weaponProficiencies: new List<ProficiencyBools>()
-            );
+            //_baseClass = new BaseClass(
+            //    classDescription: new ClassDescription(
+            //        "",
+            //        ""
+            //    ),
+            //    primaryAbility: 0,
+            //    savingThrows: null,
+            //    dice: new Dice.Dice(""),
+            //    armorProficiencies: new List<ProficiencyBools>(),
+            //    toolProficiencies: new List<ProficiencyBools>(),
+            //    skills: new List<Skills.Skill>(),
+            //    weaponProficiencies: new List<ProficiencyBools>()
+            //);
+        }
+
+        public DungeonRace(string raceName, bool isOriginalRace, BaseClass baseClass)
+        {
+            RaceName = raceName;
+            IsOriginalRace = isOriginalRace;
+            _baseClass = baseClass;
         }
 
         public DungeonRace(string raceName, bool isOriginalRace)

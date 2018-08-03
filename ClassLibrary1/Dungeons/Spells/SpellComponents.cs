@@ -1,6 +1,6 @@
 ﻿namespace ToolLibrary.Dungeons.Spells
 {
-    internal class SpellComponents
+    public class SpellComponents
     {
         public bool Verbal;
         public bool Somatic;

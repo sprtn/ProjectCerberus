@@ -3,7 +3,7 @@ using ToolLibrary.Dungeons.Spells.Classes;
 
 namespace ToolLibrary.Dungeons.Spells
 {
-    class Spell
+    public class Spell
     {
         //General Spell Info
         public string m_spellName { get; }
