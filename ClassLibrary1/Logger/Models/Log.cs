@@ -6,7 +6,7 @@ namespace ToolLibrary.Logger.Models
     public class Log
     {
         public List<LogObject> LogObjects = new List<LogObject>();
-        public string CreateTime;
+        public DateTime CreateTime;
 
         public Log()
         {
@@ -32,7 +32,7 @@ namespace ToolLibrary.Logger.Models
 
         private void SetCreateTime()
         {
-            CreateTime = DateTime.Now.ToLongTimeString();
+            CreateTime = DateTime.Now;
         }
     }
 }
