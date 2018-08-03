@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using ToolLibrary.Logger.Models;
+using ToolLibrary.FileHandlers.Logger.Models;
 
-namespace ToolLibrary.Logger
+namespace ToolLibrary.FileHandlers.Logger
 {
     public class JsonLogger
     {
@@ -33,6 +32,11 @@ namespace ToolLibrary.Logger
         public void LogError()
         {
             Log(LogType.Error, DateTime.Now.ToShortDateString());
+        }
+
+        public void LogError(Exception e)
+        {
+            Log(LogType.Error, new LogObject(e.Message));
         }
 
         public void LogError(string logObject)

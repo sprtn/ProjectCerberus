@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
-using ToolLibrary.Logger;
-using ToolLibrary.Logger.Models;
+using ToolLibrary.FileHandlers.Logger;
+using ToolLibrary.FileHandlers.Logger.Models;
 
 namespace ToolLibrary.Database.DatabaseConnection
 {
@@ -21,7 +21,7 @@ namespace ToolLibrary.Database.DatabaseConnection
             }
             catch (Exception e)
             {
-                Logger.JsonLogger _logger = new Logger.JsonLogger();
+                JsonLogger _logger = new JsonLogger();
                 LogObject lo = new LogObject(e);
                 _logger.LogError(lo);
             }

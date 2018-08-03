@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -65,6 +68,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -79,7 +83,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Chanut-Role-Playing-Adventure-Map.ico" />
+    <Content Include="Chanut-Role-Playing-Armor.ico" />
+    <Content Include="Chanut-Role-Playing-Castle.ico" />
+    <Content Include="Chanut-Role-Playing-Destructive-Magic.ico" />
+    <Content Include="Chanut-Role-Playing-Item-Bag.ico" />
+    <Content Include="Chanut-Role-Playing-Monster.ico" />
+    <Content Include="Chanut-Role-Playing-Potion.ico" />
     <Content Include="Chanut-Role-Playing-Spell-Scroll.ico" />
+    <Content Include="Chanut-Role-Playing-Sword.ico" />
+    <Content Include="Google-Noto-Emoji-Animals-Nature-22228-unicorn-face.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\ToolLibrary.csproj">
+      <Project>{bbe37b8a-0ca9-44af-a73e-fdd958ef1794}</Project>
+      <Name>ToolLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

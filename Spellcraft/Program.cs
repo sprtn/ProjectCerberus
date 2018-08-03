@@ -16,7 +16,7 @@ namespace Spellcraft
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new spellcraftForm());
+            Application.Run(new SpellcraftForm());
         }
     }
 }

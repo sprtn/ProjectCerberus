@@ -1,5 +1,6 @@
-﻿using ToolLibrary.Logger;
-using ToolLibrary.Logger.Models;
+﻿using ToolLibrary.FileHandlers.Logger;
+using ToolLibrary.FileHandlers.Logger.Models;
+using ToolLibrary.Logger;
 
 namespace TestApp
 {
