@@ -1,6 +1,6 @@
-﻿namespace Spellcraft
+﻿namespace Morellonomicon
 {
-    partial class SpellcraftForm
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // SpellcraftForm
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(784, 457);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.MaximizeBox = false;
-            this.Name = "SpellcraftForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Spellcraft";
+            this.ClientSize = new System.Drawing.Size(917, 843);
+            this.Name = "Form1";
+            this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
