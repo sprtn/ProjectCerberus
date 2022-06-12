@@ -1,4 +1,4 @@
-﻿namespace ToolLibrary.Dungeons.Spells.Classes
+﻿namespace Shared.Dungeons.Spells.Classes
 {
     public class ClassListClass
     {

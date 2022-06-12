@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using ToolLibrary.Dungeons.Abilities;
-using ToolLibrary.Dungeons.Race.Helpers;
+using Shared.Dungeons.Abilities;
+using Shared.Dungeons.Race.Helpers;
 
-namespace ToolLibrary.Dungeons.Race.RacialTraits
+namespace Shared.Dungeons.Race.RacialTraits
 {
     public class DungeonsRace
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ToolLibrary.Dungeons.MovementSpeed
+namespace Shared.Dungeons.MovementSpeed
 {
     internal class MovementSpeed
     {

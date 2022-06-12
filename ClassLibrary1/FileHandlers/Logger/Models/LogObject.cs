@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ToolLibrary.FileHandlers.Logger.Models
+namespace Shared.FileHandlers.Logger.Models
 {
     public class LogObject
     {

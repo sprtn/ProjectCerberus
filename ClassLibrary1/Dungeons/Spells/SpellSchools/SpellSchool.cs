@@ -1,4 +1,4 @@
-﻿namespace ToolLibrary.Dungeons.Spells.SpellSchools
+﻿namespace Shared.Dungeons.Spells.SpellSchools
 {
     public class SpellSchool
     {

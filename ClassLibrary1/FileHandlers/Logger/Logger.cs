@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using ToolLibrary.FileHandlers.Logger.Models;
+using Shared.FileHandlers.Logger.Models;
 
-namespace ToolLibrary.FileHandlers.Logger
+namespace Shared.FileHandlers.Logger
 {
     public class JsonLogger
     {

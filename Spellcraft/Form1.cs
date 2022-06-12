@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using ToolLibrary.Dungeons.Race;
-using ToolLibrary.FileHandlers;
-using ToolLibrary.FileHandlers.Local;
-using ToolLibrary.FileHandlers.Logger;
+using Shared.Dungeons.Race;
+using Shared.FileHandlers;
+using Shared.FileHandlers.Local;
+using Shared.FileHandlers.Logger;
 
 namespace Spellcraft
 {

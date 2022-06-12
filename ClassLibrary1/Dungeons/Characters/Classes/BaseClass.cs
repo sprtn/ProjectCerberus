@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using ToolLibrary.Dungeons.Proficiencies.BaseProficiencyClass;
-using ToolLibrary.Dungeons.Skills;
+using Shared.Dungeons.Proficiencies.BaseProficiencyClass;
+using Shared.Dungeons.Skills;
 
-namespace ToolLibrary.Dungeons.Mobs.Classes
+namespace Shared.Dungeons.Mobs.Classes
 {
     public class BaseClass
     {

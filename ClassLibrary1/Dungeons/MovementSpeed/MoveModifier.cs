@@ -1,4 +1,4 @@
-﻿namespace ToolLibrary.Dungeons.MovementSpeed
+﻿namespace Shared.Dungeons.MovementSpeed
 {
     public class MovementSpeedModifier
     {

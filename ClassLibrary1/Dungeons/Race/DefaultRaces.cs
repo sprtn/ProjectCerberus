@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using ToolLibrary.Dungeons.Abilities;
-using ToolLibrary.Dungeons.Characters.Race;
-using ToolLibrary.Dungeons.Spells;
+using Shared.Dungeons.Abilities;
+using Shared.Dungeons.Characters.Race;
+using Shared.Dungeons.Spells;
 
-namespace ToolLibrary.Dungeons.Race
+namespace Shared.Dungeons.Race
 {
     public class DefaultRaces
     {

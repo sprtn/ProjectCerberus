@@ -5,7 +5,7 @@ using System.Web;
 using System.Data.SqlClient;
 using Dapper;
 
-namespace ToolLibrary.Dungeons.DataManager
+namespace Shared.Dungeons.DataManager
 {
     public class DataManager
     {

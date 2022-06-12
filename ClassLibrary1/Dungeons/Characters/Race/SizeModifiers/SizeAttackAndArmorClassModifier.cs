@@ -1,4 +1,4 @@
-﻿namespace ToolLibrary.Dungeons.Characters.Race.SizeModifiers
+﻿namespace Shared.Dungeons.Characters.Race.SizeModifiers
 {
     public partial class DungeonRace
     {

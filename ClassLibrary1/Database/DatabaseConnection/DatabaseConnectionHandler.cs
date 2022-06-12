@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Data.SqlClient;
-using ToolLibrary.FileHandlers.Logger;
-using ToolLibrary.FileHandlers.Logger.Models;
+using Shared.FileHandlers.Logger;
+using Shared.FileHandlers.Logger.Models;
 
-namespace ToolLibrary.Database.DatabaseConnection
+namespace Shared.Database.DatabaseConnection
 {
     public static class DatabaseConnectionHandler
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace ToolLibrary.FileHandlers
+namespace Shared.FileHandlers
 {
     public static class FileHandlersCfg
     {

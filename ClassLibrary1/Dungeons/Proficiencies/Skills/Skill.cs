@@ -1,6 +1,6 @@
-﻿using ToolLibrary.Dungeons.Proficiencies.BaseProficiencyClass;
+﻿using Shared.Dungeons.Proficiencies.BaseProficiencyClass;
 
-namespace ToolLibrary.Dungeons.Skills
+namespace Shared.Dungeons.Skills
 {
     public class Skill : ProficiencyBools
     {

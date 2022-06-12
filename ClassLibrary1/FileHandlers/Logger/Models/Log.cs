@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ToolLibrary.FileHandlers.Logger.Models
+namespace Shared.FileHandlers.Logger.Models
 {
     public class Log
     {

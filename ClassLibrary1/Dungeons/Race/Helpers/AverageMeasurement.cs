@@ -1,4 +1,4 @@
-﻿namespace ToolLibrary.Dungeons.Race.Helpers
+﻿namespace Shared.Dungeons.Race.Helpers
 {
     public class AverageMeasurement
     {

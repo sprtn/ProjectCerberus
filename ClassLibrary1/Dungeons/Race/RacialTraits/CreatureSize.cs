@@ -1,4 +1,4 @@
-﻿namespace ToolLibrary.Dungeons.Race.RacialTraits
+﻿namespace Shared.Dungeons.Race.RacialTraits
 {
     public struct CreatureSize
     {

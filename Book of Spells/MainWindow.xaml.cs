@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using ToolLibrary.Dungeons.Characters.Race;
-using ToolLibrary.Dungeons.Mobs.Classes;
-using ToolLibrary.Dungeons.Spells.SpellSchools;
+using Shared.Dungeons.Characters.Race;
+using Shared.Dungeons.Mobs.Classes;
+using Shared.Dungeons.Spells.SpellSchools;
 
 namespace Book_of_Spells
 {

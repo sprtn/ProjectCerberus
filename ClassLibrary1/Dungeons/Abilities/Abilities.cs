@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ToolLibrary.Dungeons.Abilities
+namespace Shared.Dungeons.Abilities
 {
     public class Abilities
     {

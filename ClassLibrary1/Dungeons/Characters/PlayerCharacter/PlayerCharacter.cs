@@ -1,10 +1,10 @@
-﻿using ToolLibrary.Dungeons.Characters.Classes;
-using ToolLibrary.Dungeons.Race.RacialTraits;
-using ToolLibrary.Dungeons.Mobs.Classes;
-using Calc = ToolLibrary.Maths.Calculator;
-using DungeonRace = ToolLibrary.Dungeons.Characters.Race.SizeModifiers.DungeonRace;
+﻿using Shared.Dungeons.Characters.Classes;
+using Shared.Dungeons.Race.RacialTraits;
+using Shared.Dungeons.Mobs.Classes;
+using Calc = Shared.Helpers.Calculator;
+using DungeonRace = Shared.Dungeons.Characters.Race.SizeModifiers.DungeonRace;
 
-namespace ToolLibrary.Dungeons.Mobs.PlayerCharacter
+namespace Shared.Dungeons.Mobs.PlayerCharacter
 {
     public class PlayerCharacter
     {

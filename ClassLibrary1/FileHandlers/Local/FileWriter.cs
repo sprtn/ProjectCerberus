@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using ToolLibrary.FileHandlers.Logger;
+using Shared.FileHandlers.Logger;
 
-namespace ToolLibrary.FileHandlers.Local
+namespace Shared.FileHandlers.Local
 {
     public static class FileWriter
     {

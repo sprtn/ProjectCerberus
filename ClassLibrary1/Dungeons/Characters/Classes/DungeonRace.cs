@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using ToolLibrary.Dungeons.Mobs.Classes;
-using ToolLibrary.Dungeons.Proficiencies.BaseProficiencyClass;
+using Shared.Dungeons.Mobs.Classes;
+using Shared.Dungeons.Proficiencies.BaseProficiencyClass;
 
-namespace ToolLibrary.Dungeons.Characters.Classes
+namespace Shared.Dungeons.Characters.Classes
 {
     public class DungeonRace
     {

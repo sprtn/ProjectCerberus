@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ToolLibrary.Dungeons.Characters.Classes;
-using DungeonRace = ToolLibrary.Dungeons.Characters.Race.SizeModifiers.DungeonRace;
+using Shared.Dungeons.Characters.Classes;
+using DungeonRace = Shared.Dungeons.Characters.Race.SizeModifiers.DungeonRace;
 
-namespace ToolLibrary.Dungeons.Mobs.Classes
+namespace Shared.Dungeons.Mobs.Classes
 {
     public partial class DungeonRaces : List<DungeonRace>
     {

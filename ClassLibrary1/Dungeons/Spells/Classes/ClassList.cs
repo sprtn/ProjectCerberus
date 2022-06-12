@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ToolLibrary.Dungeons.Spells.Classes
+namespace Shared.Dungeons.Spells.Classes
 {
     public class ClassList : List<ClassListClass>
     {

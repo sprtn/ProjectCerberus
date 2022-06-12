@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using ToolLibrary.Dungeons.SavingThrows;
+using Shared.Dungeons.SavingThrows;
 
-namespace ToolLibrary.Dungeons.Proficiencies.SavingThrows
+namespace Shared.Dungeons.Proficiencies.SavingThrows
 {
     public class SavingThrows : List<SavingThrow>
     {

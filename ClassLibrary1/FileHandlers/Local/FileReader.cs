@@ -3,7 +3,7 @@ using System.Collections.Generic;
 //using System.Collections.Generic;
 using System.IO;
 
-namespace ToolLibrary.FileHandlers.Local
+namespace Shared.FileHandlers.Local
 {
     public static class FileReader
     {

@@ -1,7 +1,7 @@
-﻿using Calc = ToolLibrary.Maths.Calculator;
+﻿using Calc = Shared.Helpers.Calculator;
 using SC = System.Console;
 
-namespace ToolLibrary.Dungeons.Dice
+namespace Shared.Dungeons.Dice
 {
     public class Dice
     {

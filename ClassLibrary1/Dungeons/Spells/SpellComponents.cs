@@ -1,4 +1,4 @@
-﻿namespace ToolLibrary.Dungeons.Spells
+﻿namespace Shared.Dungeons.Spells
 {
     public class SpellComponents
     {

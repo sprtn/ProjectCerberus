@@ -1,4 +1,4 @@
-﻿namespace ToolLibrary.Dungeons.Proficiencies.BaseProficiencyClass
+﻿namespace Shared.Dungeons.Proficiencies.BaseProficiencyClass
 {
     public class ProficiencyBools
     {

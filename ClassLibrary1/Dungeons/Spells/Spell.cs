@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using ToolLibrary.Dungeons.Spells.Classes;
+using Shared.Dungeons.Spells.Classes;
 
-namespace ToolLibrary.Dungeons.Spells
+namespace Shared.Dungeons.Spells
 {
     public class Spell
     {

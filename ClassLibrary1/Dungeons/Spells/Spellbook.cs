@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ToolLibrary.Dungeons.Spells
+namespace Shared.Dungeons.Spells
 {
     class Spellbook
     {

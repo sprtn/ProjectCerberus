@@ -1,4 +1,4 @@
-﻿namespace ToolLibrary.Dungeons.Mobs.Classes
+﻿namespace Shared.Dungeons.Mobs.Classes
 {
     public class ClassDescription
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using static ToolLibrary.Dungeons.Characters.Race.SizeModifiers.DungeonRace;
+using static Shared.Dungeons.Characters.Race.SizeModifiers.DungeonRace;
 
-namespace ToolLibrary.Dungeons.Characters.Race
+namespace Shared.Dungeons.Characters.Race
 {
     public partial class Race
     {

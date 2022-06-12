@@ -1,4 +1,4 @@
-using NetworkAnalyser;
+using NetworkService;
 
 IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices(services =>

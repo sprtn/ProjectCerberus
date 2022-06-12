@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ToolLibrary.Dungeons.Skills
+namespace Shared.Dungeons.Skills
 {
     class Skills : List<Skill>
     {

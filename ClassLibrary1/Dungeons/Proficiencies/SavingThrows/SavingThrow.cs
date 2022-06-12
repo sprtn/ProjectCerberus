@@ -1,6 +1,6 @@
-﻿using ToolLibrary.Dungeons.Proficiencies.BaseProficiencyClass;
+﻿using Shared.Dungeons.Proficiencies.BaseProficiencyClass;
 
-namespace ToolLibrary.Dungeons.SavingThrows
+namespace Shared.Dungeons.SavingThrows
 {
     public class SavingThrow : ProficiencyBools
     {

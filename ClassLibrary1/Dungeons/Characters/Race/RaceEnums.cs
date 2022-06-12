@@ -1,4 +1,4 @@
-﻿namespace ToolLibrary.Dungeons.Characters.Race
+﻿namespace Shared.Dungeons.Characters.Race
 {
     public partial class Race
     {
