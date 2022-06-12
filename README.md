@@ -12,14 +12,14 @@ You might also need to be on an operating system that allows MariaDB to run if i
 
 ```
 TODO
-For now: Microsoft Visual Studio (2017)
+None. Some parts are made using C# 6.0
 ```
 
 ### Installing
 
 ```
 TODO
-For now: git clone https://github.com/sprtn/ProjectCerberus.git
+For now: download and use freely.
 ```
 
 
@@ -27,17 +27,13 @@ For now: git clone https://github.com/sprtn/ProjectCerberus.git
 
 ```
 TODO
-For now: Run the project locally
 ```
 
 ## Built With
 
-* [Visual Studio 2017](https://www.visualstudio.com/vs/whatsnew/) - The IDE used
-* [XAML](https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/xaml-overview-wpf) - XAML is the declarative markup language used for UI creation
-* [WPF](https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/introduction-to-wpf-in-vs) - Used for GUI
+* [Visual Studio 2022](https://www.visualstudio.com/vs/whatsnew/) - The IDE used
 * [MySql](https://dev.mysql.com/downloads/windows/visualstudio/) - The chosen database software
 * [csharp](https://docs.microsoft.com/en-us/dotnet/csharp/) - The chosen programming language
-* [ReSharper](https://www.jetbrains.com/resharper/) - Visual Studio Extension for .NET Developers for better code and standards compliance.
 * [GitKraken](https://www.gitkraken.com/) - Git GUI client
 
 
