@@ -1,22 +1,21 @@
-﻿using Calc = Shared.Helpers.Calculator;
-using SC = System.Console;
+﻿using System;
+using Calc = Shared.Helpers.Calculator;
+//using SC = System.Console;
 
 namespace Shared.Dungeons.Dice
 {
     public class Dice
     {
-        public int GetSizeOfDice { get; }
+        public int DiceSize { get; } = 6;
 
-        public int GetNumberOfDice { get; }
+        public int DiceQuantity { get; } = 1;
 
         /// <summary>
         /// Constructor for the Dice class
         /// </summary>
-        /// <param name="diceName">Takes a string containing int + char + int as a string.</param>
+        /// <param name="diceName">Takes a string containing int + char + int as a string, Ex: 1d4.</param>
         public Dice(string diceName)
         {
-            #region If the dice is a 'xdy', we store x as numberOfDice and y as sizeOfDice
-
             if (diceName.Length != 3)
                 return;
 
@@ -25,19 +24,17 @@ namespace Shared.Dungeons.Dice
             if (int.TryParse(diceNameAsCharArray[0].ToString(), out var numberOfDice) &&
                 int.TryParse(diceNameAsCharArray[2].ToString(), out var sizeOfDice))
             {
-                GetNumberOfDice = numberOfDice;
-                GetSizeOfDice = sizeOfDice;
-                SC.WriteLine($"Success: {diceName} was parsed.");
+                DiceQuantity = numberOfDice;
+                DiceSize = sizeOfDice;
             }
             else
-            {
-                SC.WriteLine($"Failed: {diceName} was not parsed.");
-                SC.WriteLine($"-- Make sure {diceNameAsCharArray[0]} and {diceNameAsCharArray[2]} are integers.");
-                GetSizeOfDice = 0;
-                GetNumberOfDice = 0;
-            }
-            #endregion
+                throw new Exception($"Unable to parse dice. {diceNameAsCharArray[0]} and {diceNameAsCharArray[2]} should be integers. Example: 2d6");
         }
+        public Dice(int diceSize, int numDice )        {
+            DiceSize = diceSize;
+            DiceQuantity = numDice;
+        }
+        public Dice() { }
 
         #region ThrowDice methods with overloads.
 
@@ -48,8 +45,8 @@ namespace Shared.Dungeons.Dice
         public int ThrowDice()
         {
             var total = 0;
-            for (var i = 0; i < GetNumberOfDice; i++)
-                total += Calc.GetRandomNumber(1, GetSizeOfDice);
+            for (var i = 0; i < DiceQuantity; i++)
+                total += Calc.GetRandomNumber(1, DiceSize);
 
             return total;
         }
@@ -62,8 +59,8 @@ namespace Shared.Dungeons.Dice
         public int ThrowDice(int min)
         {
             var total = 0;
-            for (var i = 0; i < GetNumberOfDice; i++)
-                total += Calc.GetRandomNumber(min, GetSizeOfDice);
+            for (var i = 0; i < DiceQuantity; i++)
+                total += Calc.GetRandomNumber(min, DiceSize);
 
             return total;
         }
@@ -77,7 +74,7 @@ namespace Shared.Dungeons.Dice
         public int ThrowDice(int min, int max)
         {
             var total = 0;
-            for (var i = 0; i < GetNumberOfDice; i++)
+            for (var i = 0; i < DiceQuantity; i++)
             {
                 var addedNumber = 0;
                 var attempts = 0;
@@ -90,7 +87,7 @@ namespace Shared.Dungeons.Dice
                 }
 
                 if (attempts < 10)
-                    total += Calc.GetRandomNumber(min, GetSizeOfDice);
+                    total += Calc.GetRandomNumber(min, DiceSize);
                 else
                     total += Calc.GetAverageNumber(min, max);
             }          
@@ -105,7 +102,7 @@ namespace Shared.Dungeons.Dice
         /// <returns>Returns a string containing a number of dice + d + size of dice</returns>
         public override string ToString()
         {
-            return $"{GetNumberOfDice}d{GetSizeOfDice}";
+            return $"{DiceQuantity}d{DiceSize}";
         }
     }
 }

@@ -2,9 +2,9 @@
 
 namespace Shared.Helpers
 {
-    static class Calculator
+    public static class Calculator
     {
-        public static readonly Random Rnd = new Random();
+        public static readonly Random Rnd = new();
 
         public static int GetRandomNumber(int min, int max)
         {

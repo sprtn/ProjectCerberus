@@ -1,4 +1,4 @@
-﻿namespace Shared.Dungeons.Spells.SpellSchools
+﻿namespace Morello.Dungeons.Spells.SpellSchool
 {
     public class SpellSchool
     {

@@ -45,7 +45,7 @@ namespace NetworkService
                         switch (item.status)
                         {
                             case System.Net.NetworkInformation.IPStatus.Success:
-                                Log.LogInformation($"Host: {item.host}: Average MS over {Analyzer.GetNumSamplesForHost(item.host)} samples is {Analyzer.GetAverageMSForHost(item.host):0.00}. Average success rate is {(Analyzer.GetSuccessForHostPercentile(item.host) * 100):0.00}%");
+                                Log.LogInformation($"Host: {item.host}: {item.ms} ms. Average MS over {Analyzer.GetNumSamplesForHost(item.host)} samples is {Analyzer.GetAverageMSForHost(item.host):0.00}. Average success rate is {(Analyzer.GetSuccessForHostPercentile(item.host) * 100):0.00}%");
                                 break;
                             default:
                                 Log.LogInformation($"Ping to Host {item.host} failed. Status: {item.status}. ");

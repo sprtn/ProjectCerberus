@@ -1,0 +1,36 @@
+﻿@page "/book_of_spells"
+@using Morello.Dungeons.Spells
+@using Morello.Dungeons.Spells.Classes
+
+<PageTitle>Spellbook</PageTitle>
+
+<h1>Spellbook</h1>
+
+<button class="btn btn-primary" @onclick="GetRandomSpell">Give Me A Spell!</button>
+
+@if(clicker > 2)
+{
+    <h2>Not Fireball?</h2>
+    <p>Why would you want anything else than fireball?</p>
+    <p>You're wasting both my time and yours.</p>
+}
+else if(@curSpell != null)
+{
+    <h2>@curSpell.name</h2>
+    <p role="status">@curSpell.school</p>
+    <hr />
+    <p role="status">@curSpell.description.</p>
+    <p>Range @curSpell.castRange @curSpell.castRangeType, @curSpell.castTimeType cast time</p>
+}
+
+@code {
+    private Morello.Dungeons.Spells.Spellbook spellbook = new();
+    private Spell curSpell;
+    private int clicker = 0;
+
+    private void GetRandomSpell()
+    {
+        curSpell = spellbook.GetRandomSpell();
+        clicker++;
+    }
+}

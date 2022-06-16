@@ -2,7 +2,7 @@
 
 namespace Shared.Dungeons.Spells
 {
-    class Spellbook
+    public class Spellbook
     {
         List<Spell> _mSpellBook;
 
